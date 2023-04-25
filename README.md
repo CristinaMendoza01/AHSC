@@ -5,5 +5,7 @@ This project is called Automatic Sound Classification and it's about to create a
 
 # To be able to use Freesound
 Open the terminal inside the PyCharm Project
+
 Go to freesound-python-master
+
 Run python setup.py install
