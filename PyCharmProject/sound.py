@@ -1,8 +1,9 @@
 import os, sys
 import json
+import freesound as fs
 
 sys.path.append('./freesound-python-master/')  # directory were you installed the freesound-python repository
-import freesound as fs
+
 
 descriptors = [ 'lowlevel.spectral_centroid.mean',
                 'lowlevel.spectral_contrast.mean',
