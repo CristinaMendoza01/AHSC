@@ -1,7 +1,7 @@
 import json
 import numpy as np
 from clustering import fetchDataDetails, convFtrDict2List
-from sound import download_sounds_freesound
+from download import download_sounds_freesound
 
 # Part 4
 def compute_similar_sounds(queryFile, targetDir, descInput=[]):
