@@ -10,8 +10,8 @@ descriptors = [ 'lowlevel.spectral_centroid.mean',
 
 # Part 4
 # 4.1
-f.download_sounds_freesound(queryText="guitar", tag="single_note", duration=5, API_Key="dCvdtqvTd7A4WhnDF3qSkTZafXKxVqQIxlCM85KR", outputDir="./testDownload", topNResults=5, featureExt=".json", descriptors=descriptors)
-f.download_sounds_freesound(queryText="piano", tag="single_note", duration=5, API_Key="dCvdtqvTd7A4WhnDF3qSkTZafXKxVqQIxlCM85KR", outputDir="./testDownload", topNResults=5, featureExt=".json", descriptors=descriptors)
+f.download_sounds_freesound(queryText="guitar", tag="single_note", duration=5, API_Key="dCvdtqvTd7A4WhnDF3qSkTZafXKxVqQIxlCM85KR", outputDir="./testClass", topNResults=5, featureExt=".json", descriptors=descriptors)
+f.download_sounds_freesound(queryText="piano", tag="single_note", duration=5, API_Key="dCvdtqvTd7A4WhnDF3qSkTZafXKxVqQIxlCM85KR", outputDir="./testClass", topNResults=5, featureExt=".json", descriptors=descriptors)
 
 # 4.2
 f.classify_sound_kNN("./testClass/guitar/91199/91199_1075352-lq.json", "./testDownload", 5, descInput=[1, 12])
