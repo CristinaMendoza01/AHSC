@@ -57,7 +57,6 @@ def download_sounds_freesound(query, tag, duration, directory, api_key, topNresu
     else:
         results = client.text_search(query=query, sort="score", fields="id,name,previews,username,url,analysis",
                                   descriptors=','.join(descriptors), page_size=page_size, normalized=1)
-    #results = client.text_search(query=query, fields="id,name,previews", page_size=page_size)
 
     # Crea el directorio si aún no existe
     if not os.path.exists(directory):
@@ -87,9 +86,14 @@ def download_sounds_freesound(query, tag, duration, directory, api_key, topNresu
                     "Not able to download required number of sounds. Either there are not enough search results on freesound for your search query and filtering constraints or something is wrong with this script.")
                 break
             sound = results[indCnt - ((pageNo - 1) * page_size)]
+
+            outDir = os.path.join(dir_path + '/' + str(sound.id))
+            os.mkdir(outDir)
+
             print("Downloading mp3 preview and descriptors for sound with id: %s" % str(sound.id))
 
-            mp3Path = os.path.join(dir_path, str(sound.previews.preview_lq_mp3.split("/")[-1]))
+            mp3Path = os.path.join(outDir + '/' + str(sound.previews.preview_lq_mp3.split("/")[-1]))
+            print(mp3Path)
             ftrPath = mp3Path.replace('.mp3', featureExt)
 
             try:
@@ -97,9 +101,9 @@ def download_sounds_freesound(query, tag, duration, directory, api_key, topNresu
                 # Initialize a dictionary to store descriptors
                 features = {}
                 # Obtaining all the descriptors
-                #for desc in descriptors:
-                #    features[desc] = []
-                #    features[desc].append(eval("sound.analysis." + desc))
+                for desc in descriptors:
+                    features[desc] = []
+                    features[desc].append(eval("sound.analysis." + desc))
 
                 # Once we have all the descriptors, store them in a json file
                 json.dump(features, open(ftrPath, 'w'))
@@ -109,8 +113,7 @@ def download_sounds_freesound(query, tag, duration, directory, api_key, topNresu
             except:
                 if os.path.exists(dir_path):
                     print("Bad")
-                    #shutil.rmtree("datos")
-                    #os.system("rm -r " + outDir1)
+                    shutil.rmtree(dir_path)
 
             indCnt += 1
 
@@ -127,4 +130,4 @@ def download_sounds_freesound(query, tag, duration, directory, api_key, topNresu
             fid.write('\t'.join(elem) + '\n')
         fid.close()
     else:
-        print("Lleno")
+        print("Not empty")
