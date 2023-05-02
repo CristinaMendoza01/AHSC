@@ -13,6 +13,8 @@ To achieve this, the project employs the Python programming language and the Pyc
 3. Open the terminal on the folder freesound-python-master and run the command: python setup.py install
 4. Run the project
 
+Also if you don't have installed the libraries we have used, PyCharm we will ask you to install the packages.
+
 # Requirements
 * Python version 3.11.2
 * PyCharm version 2023.1
