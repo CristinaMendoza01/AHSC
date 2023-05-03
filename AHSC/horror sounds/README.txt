@@ -1,0 +1,1 @@
+This folder contains all the files .json of the horror sounds from Freesound, used by our project.
