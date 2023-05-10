@@ -1,6 +1,6 @@
 import soundata
 
-dataset = soundata.initialize('FSD50K')
+dataset = soundata.initialize('fsd50k')
 dataset.download()  # download the dataset
 dataset.validate()  # validate that all the expected files are there
 
