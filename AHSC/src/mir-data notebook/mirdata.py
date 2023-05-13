@@ -4,6 +4,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 
 
+
 # Imports to support MIR
 import mirdata
 import essentia.standard as ess
@@ -14,8 +15,9 @@ import pandas as pd
 mridangam_stroke = mirdata.initialize('mridangam_stroke')
 
 
-from google.colab import drive
-drive.mount('/content/drive')
+#lo comento porque estoy usando dataset desde el desktop
+#import drive
+#drive.mount('/content/drive')
 
 
 #This cell downloads and validates the mridangam dataset
