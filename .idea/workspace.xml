@@ -5,10 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2cc096e0-ff45-4676-8c1c-df06701d1de6" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/MTL-Project.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/MTL-Project.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AHSC/src/mir-data notebook/mirdata.py" beforeDir="false" afterPath="$PROJECT_DIR$/AHSC/src/mir-data notebook/mirdata.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AHSC/src/notebook/classification.py" beforeDir="false" afterPath="$PROJECT_DIR$/AHSC/src/notebook/classification.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AHSC/src/notebook/clustering.py" beforeDir="false" afterPath="$PROJECT_DIR$/AHSC/src/notebook/clustering.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AHSC/src/notebook/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/AHSC/src/notebook/main.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

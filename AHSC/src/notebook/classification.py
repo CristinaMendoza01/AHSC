@@ -55,11 +55,12 @@ def classify_sound_kNN(queryFile, targetDir, K, descInput=[]):
         print("Warning: We found an exact copy of the query file in the target directory. "
               "Beware of duplicates while doing KNN classification.")
 
-    classes = (np.array(distances)[:K, 1]).tolist()
+    classes = (np.array(distances)[:K, 2]).tolist()
     freqCnt = []
     for ii in range(K):
         freqCnt.append(classes.count(classes[ii]))
     indMax = np.argmax(freqCnt)
     predClass = classes[indMax]
     print("This sample belongs to class: " + str(predClass))
+
     return predClass

@@ -64,7 +64,7 @@ def fetchDataDetails(inputDir, descExt='.json'):
 
 def clustering():
     # code to select the descriptors to plot of the three instruments chosen
-    inputDir = "./src/notebook/testDownload/"
+    inputDir = "testDownload"
 
     ### this is the main line to modify, select two descriptors, change the XX by a number from 0 to 16
 
@@ -82,8 +82,8 @@ def clustering():
     for ii, category in enumerate(dataDetails.keys()):
         catArray.append(category)
         for soundId in dataDetails[category].keys():
-            filepath = os.path.join(inputDir + '/' + soundId + '/' + dataDetails[category][soundId]['file'])
-            # print(filepath)
+            filepath = os.path.join(inputDir + '/' +category+ '/' + soundId + '/' + dataDetails[category][soundId]['file'])
+            #print(filepath)
             descSound = convFtrDict2List(json.load(open(filepath, 'r')))
             x_cord = descSound[descInput[0]]
             y_cord = descSound[descInput[1]]
@@ -97,6 +97,7 @@ def clustering():
     plt.xlabel(descriptorMapping[descInput[0]])
     plt.legend(legArray, catArray, numpoints=1, bbox_to_anchor=(0., 1.02, 1., .102), loc=3, ncol=len(catArray), mode="expand", borderaxespad=0.)
 
+    plt.show()
 
 def cluster_sounds(targetDir, nCluster=-1, descInput=[]):
     """
