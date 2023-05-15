@@ -15,13 +15,13 @@ import pandas as pd
 mridangam_stroke = mirdata.initialize('mridangam_stroke')
 
 
-#lo comento porque estoy usando dataset desde el desktop
+#lo comento porque estoy usando trainingSet desde el desktop
 #import drive
 #drive.mount('/content/drive')
 
 
-#This cell downloads and validates the mridangam dataset
-mridangam_stroke.download()  # download the dataset
+#This cell downloads and validates the mridangam trainingSet
+mridangam_stroke.download()  # download the trainingSet
 mridangam_stroke.validate()  # validate that all the expected files are there
 
 

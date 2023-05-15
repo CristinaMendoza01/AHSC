@@ -1,0 +1,1 @@
+This folder contains the .json files from 6 categories to create the dataset which we use to train the horror sounds from Freesound-
