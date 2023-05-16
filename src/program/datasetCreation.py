@@ -19,8 +19,8 @@ apiCristina = "dCvdtqvTd7A4WhnDF3qSkTZafXKxVqQIxlCM85KR"
 #print("Part 1: Download the training sounds from Freesound\n")
 
 ######################### CRISTINA SOUNDS ##################################
-d.download_sounds_freesound(query="scream", tag="human", duration=10, directory="trainingSet", api_key=apiCristina, topNresults=10, featureExt='.json')
-d.download_sounds_freesound(query="breathe", tag="human", duration=10, directory="trainingSet", api_key=apiCristina, topNresults=10, featureExt='.json')
+#d.download_sounds_freesound(query="scream", tag="human", duration=10, directory="trainingSet", api_key=apiCristina, topNresults=10, featureExt='.json')
+#d.download_sounds_freesound(query="breathe", tag="human", duration=10, directory="trainingSet", api_key=apiCristina, topNresults=10, featureExt='.json')
 ########################### SARA SOUNDS ####################################
 
 ########################## NAIARA SOUNDS ###################################
@@ -28,9 +28,15 @@ d.download_sounds_freesound(query="breathe", tag="human", duration=10, directory
 ########################### ARNAU SOUNDS ###################################
 
 ########################### LAIA SOUNDS ####################################
-
+#d.download_sounds_freesound(query="bowed string instrument", tag=None, duration=10, directory="trainingSet", api_key=apiCristina, topNresults=20, featureExt='.json')
+#d.download_sounds_freesound(query="violin", tag='bowed', duration=10, directory="trainingSet", api_key=apiCristina, topNresults=20, featureExt='.json')
+#d.download_sounds_freesound(query="viola", tag=None, duration=10, directory="trainingSet", api_key=apiCristina, topNresults=10, featureExt='.json')
+#d.download_sounds_freesound(query="bell", tag=None, duration=10, directory="trainingSet", api_key=apiCristina, topNresults=50, featureExt='.json')
+#d.download_sounds_freesound(query="guitar", tag="distorted", duration=10, directory="trainingSet", api_key=apiCristina, topNresults=50, featureExt='.json')
+#d.download_sounds_freesound(query="guitar", tag=None, duration=5, directory="trainingSet", api_key=apiCristina, topNresults=30, featureExt='.json')
+#d.download_sounds_freesound(query="piano", tag=None, duration=5, directory="trainingSet", api_key=apiCristina, topNresults=30, featureExt='.json')
 ########################## VÍCTOR SOUNDS ###################################
-d.download_sounds_freesound(query="door knocks", tag=None, duration=3, directory="trainingSet", api_key=apiCristina, topNresults=20, featureExt='.json')
+#d.download_sounds_freesound(query="door knocks", tag=None, duration=3, directory="trainingSet", api_key=apiCristina, topNresults=20, featureExt='.json')
 ############################################################################
 
 #d.download_sounds_freesound(query="flute", tag="single-note", duration=10, directory="./src/program/testDownload", api_key=apiCristina, topNresults=15, featureExt='.json')
