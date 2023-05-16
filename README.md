@@ -13,14 +13,14 @@ To achieve this, the project employs the Python programming language and the Pyc
 3. Open the terminal on the folder freesound-python-master and run the command: python setup.py install
 4. Run the project
 
-Also if you don't have installed the libraries we have used, PyCharm we will ask you to install the packages.
-
 # Requirements
-* Python version 3.11.2
-* PyCharm version 2023.1
+* Python version 3.8
+* Numpy version 1.20.0
+
+You must install the versions of these libraries to be able to run the project. 
 
 # Organization
-The code is in the folder AHSC/src and it is divided into different folders, depending on the task (interface, classification, ...).
+The code is in the folder AHSC/src and it is divided into different folders, depending on the task (interface, classification, ...). The main folder is the program folder.
 
 # Team members
 Arnau Adan
