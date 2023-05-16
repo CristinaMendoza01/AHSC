@@ -4,181 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="20ececd4-ae2d-4e07-80d8-be7d29006314" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/program/datasetCreation.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/program/trainingSet/README.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/MTL-Project.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/MTL-Project.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dataset/README.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/horror sounds/README.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/program/testingSet/README.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/mir-data notebook/mirdata.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/mir-data notebook/mirdata.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/notebook/classification.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/program/classification.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/notebook/clustering.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/program/clustering.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/notebook/download.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/program/download.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/notebook/main.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/notebook/testClass/guitar/110454/110454_1075352-lq.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/notebook/testClass/guitar/110454/110454_1075352-lq.mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/notebook/testClass/guitar/110455/110455_1075352-lq.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/notebook/testClass/guitar/110455/110455_1075352-lq.mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/notebook/testClass/guitar/399475/399475_7575123-lq.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/notebook/testClass/guitar/399475/399475_7575123-lq.mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/notebook/testClass/guitar/399479/399479_7575123-lq.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/notebook/testClass/guitar/399479/399479_7575123-lq.mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/notebook/testClass/guitar/399484/399484_7575123-lq.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/notebook/testClass/guitar/399484/399484_7575123-lq.mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/notebook/testClass/guitar/399487/399487_7575123-lq.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/notebook/testClass/guitar/399487/399487_7575123-lq.mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/notebook/testClass/guitar/399488/399488_7575123-lq.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/notebook/testClass/guitar/399488/399488_7575123-lq.mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/notebook/testClass/guitar/399490/399490_7575123-lq.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/notebook/testClass/guitar/399490/399490_7575123-lq.mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/notebook/testClass/guitar/399491/399491_7575123-lq.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/notebook/testClass/guitar/399491/399491_7575123-lq.mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/notebook/testClass/guitar/399493/399493_7575123-lq.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/notebook/testClass/guitar/399493/399493_7575123-lq.mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/notebook/testClass/guitar/399496/399496_7575123-lq.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/notebook/testClass/guitar/399496/399496_7575123-lq.mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/notebook/testClass/guitar/399500/399500_7575123-lq.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/notebook/testClass/guitar/399500/399500_7575123-lq.mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/notebook/testClass/guitar/513681/513681_9706763-lq.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/notebook/testClass/guitar/513681/513681_9706763-lq.mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/notebook/testClass/guitar/52048/52048_533680-lq.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/notebook/testClass/guitar/52048/52048_533680-lq.mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/notebook/testClass/guitar/91199/91199_1075352-lq.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/notebook/testClass/guitar/91199/91199_1075352-lq.mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/notebook/testClass/guitar/guitar_SoundList.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/notebook/testClass/piano/508792/508792_1690102-lq.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/notebook/testClass/piano/508792/508792_1690102-lq.mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/notebook/testClass/piano/508800/508800_1690102-lq.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/notebook/testClass/piano/508800/508800_1690102-lq.mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/notebook/testClass/piano/526273/526273_11399618-lq.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/notebook/testClass/piano/526273/526273_11399618-lq.mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/notebook/testClass/piano/526283/526283_11399618-lq.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/notebook/testClass/piano/526283/526283_11399618-lq.mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/notebook/testClass/piano/526288/526288_11399618-lq.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/notebook/testClass/piano/526288/526288_11399618-lq.mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/notebook/testClass/piano/526297/526297_11399618-lq.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/notebook/testClass/piano/526297/526297_11399618-lq.mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/notebook/testClass/piano/526303/526303_11399618-lq.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/notebook/testClass/piano/526303/526303_11399618-lq.mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/notebook/testClass/piano/526325/526325_11399618-lq.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/notebook/testClass/piano/526325/526325_11399618-lq.mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/notebook/testClass/piano/526329/526329_11399618-lq.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/notebook/testClass/piano/526329/526329_11399618-lq.mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/notebook/testClass/piano/673720/673720_8981843-lq.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/notebook/testClass/piano/673720/673720_8981843-lq.mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/notebook/testClass/piano/673721/673721_8981843-lq.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/notebook/testClass/piano/673721/673721_8981843-lq.mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/notebook/testClass/piano/673722/673722_8981843-lq.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/notebook/testClass/piano/673722/673722_8981843-lq.mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/notebook/testClass/piano/673723/673723_8981843-lq.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/notebook/testClass/piano/673723/673723_8981843-lq.mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/notebook/testClass/piano/673724/673724_8981843-lq.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/notebook/testClass/piano/673724/673724_8981843-lq.mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/notebook/testClass/piano/673725/673725_8981843-lq.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/notebook/testClass/piano/673725/673725_8981843-lq.mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/notebook/testClass/piano/piano_SoundList.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/notebook/testDownload/flute/257363/257363_4755274-lq.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/notebook/testDownload/flute/257363/257363_4755274-lq.mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/notebook/testDownload/flute/328727/328727_113801-lq.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/notebook/testDownload/flute/328727/328727_113801-lq.mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/notebook/testDownload/flute/354371/354371_6552981-lq.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/notebook/testDownload/flute/354371/354371_6552981-lq.mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/notebook/testDownload/flute/354398/354398_6552981-lq.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/notebook/testDownload/flute/354398/354398_6552981-lq.mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/notebook/testDownload/flute/354451/354451_6552981-lq.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/notebook/testDownload/flute/354451/354451_6552981-lq.mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/notebook/testDownload/flute/354592/354592_6552981-lq.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/notebook/testDownload/flute/354592/354592_6552981-lq.mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/notebook/testDownload/flute/354641/354641_6552981-lq.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/notebook/testDownload/flute/354641/354641_6552981-lq.mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/notebook/testDownload/flute/354646/354646_6552981-lq.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/notebook/testDownload/flute/354646/354646_6552981-lq.mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/notebook/testDownload/flute/354657/354657_6552981-lq.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/notebook/testDownload/flute/354657/354657_6552981-lq.mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/notebook/testDownload/flute/354668/354668_6552981-lq.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/notebook/testDownload/flute/354668/354668_6552981-lq.mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/notebook/testDownload/flute/354671/354671_6552981-lq.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/notebook/testDownload/flute/354671/354671_6552981-lq.mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/notebook/testDownload/flute/354672/354672_6552981-lq.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/notebook/testDownload/flute/354672/354672_6552981-lq.mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/notebook/testDownload/flute/361080/361080_6552981-lq.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/notebook/testDownload/flute/361080/361080_6552981-lq.mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/notebook/testDownload/flute/427566/427566_8599523-lq.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/notebook/testDownload/flute/427566/427566_8599523-lq.mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/notebook/testDownload/flute/427567/427567_8599523-lq.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/notebook/testDownload/flute/427567/427567_8599523-lq.mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/notebook/testDownload/flute/flute_SoundList.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/notebook/testDownload/trumpet/357323/357323_6552981-lq.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/notebook/testDownload/trumpet/357323/357323_6552981-lq.mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/notebook/testDownload/trumpet/357328/357328_6552981-lq.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/notebook/testDownload/trumpet/357328/357328_6552981-lq.mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/notebook/testDownload/trumpet/357336/357336_6552981-lq.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/notebook/testDownload/trumpet/357336/357336_6552981-lq.mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/notebook/testDownload/trumpet/357360/357360_6552981-lq.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/notebook/testDownload/trumpet/357360/357360_6552981-lq.mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/notebook/testDownload/trumpet/357361/357361_6552981-lq.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/notebook/testDownload/trumpet/357361/357361_6552981-lq.mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/notebook/testDownload/trumpet/357363/357363_6552981-lq.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/notebook/testDownload/trumpet/357363/357363_6552981-lq.mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/notebook/testDownload/trumpet/357365/357365_6552981-lq.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/notebook/testDownload/trumpet/357365/357365_6552981-lq.mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/notebook/testDownload/trumpet/357370/357370_6552981-lq.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/notebook/testDownload/trumpet/357370/357370_6552981-lq.mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/notebook/testDownload/trumpet/357378/357378_6552981-lq.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/notebook/testDownload/trumpet/357378/357378_6552981-lq.mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/notebook/testDownload/trumpet/357383/357383_6552981-lq.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/notebook/testDownload/trumpet/357383/357383_6552981-lq.mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/notebook/testDownload/trumpet/357384/357384_6552981-lq.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/notebook/testDownload/trumpet/357384/357384_6552981-lq.mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/notebook/testDownload/trumpet/357388/357388_6552981-lq.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/notebook/testDownload/trumpet/357388/357388_6552981-lq.mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/notebook/testDownload/trumpet/357391/357391_6552981-lq.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/notebook/testDownload/trumpet/357391/357391_6552981-lq.mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/notebook/testDownload/trumpet/357434/357434_6552981-lq.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/notebook/testDownload/trumpet/357434/357434_6552981-lq.mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/notebook/testDownload/trumpet/357568/357568_6552981-lq.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/notebook/testDownload/trumpet/357568/357568_6552981-lq.mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/notebook/testDownload/trumpet/trumpet_SoundList.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/notebook/testDownload/violin/355751/355751_6552981-lq.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/notebook/testDownload/violin/355751/355751_6552981-lq.mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/notebook/testDownload/violin/355769/355769_6552981-lq.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/notebook/testDownload/violin/355769/355769_6552981-lq.mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/notebook/testDownload/violin/355773/355773_6552981-lq.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/notebook/testDownload/violin/355773/355773_6552981-lq.mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/notebook/testDownload/violin/355786/355786_6552981-lq.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/notebook/testDownload/violin/355786/355786_6552981-lq.mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/notebook/testDownload/violin/355800/355800_6552981-lq.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/notebook/testDownload/violin/355800/355800_6552981-lq.mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/notebook/testDownload/violin/355812/355812_6552981-lq.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/notebook/testDownload/violin/355812/355812_6552981-lq.mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/notebook/testDownload/violin/355813/355813_6552981-lq.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/notebook/testDownload/violin/355813/355813_6552981-lq.mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/notebook/testDownload/violin/355814/355814_6552981-lq.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/notebook/testDownload/violin/355814/355814_6552981-lq.mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/notebook/testDownload/violin/355820/355820_6552981-lq.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/notebook/testDownload/violin/355820/355820_6552981-lq.mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/notebook/testDownload/violin/355821/355821_6552981-lq.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/notebook/testDownload/violin/355821/355821_6552981-lq.mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/notebook/testDownload/violin/355824/355824_6552981-lq.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/notebook/testDownload/violin/355824/355824_6552981-lq.mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/notebook/testDownload/violin/355865/355865_6552981-lq.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/notebook/testDownload/violin/355865/355865_6552981-lq.mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/notebook/testDownload/violin/355878/355878_6552981-lq.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/notebook/testDownload/violin/355878/355878_6552981-lq.mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/notebook/testDownload/violin/355896/355896_6552981-lq.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/notebook/testDownload/violin/355896/355896_6552981-lq.mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/notebook/testDownload/violin/355900/355900_6552981-lq.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/notebook/testDownload/violin/355900/355900_6552981-lq.mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/notebook/testDownload/violin/violin_SoundList.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/searchSounds/.idea/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/src/soundata/.idea/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/searchSounds/.idea/.name" beforeDir="false" afterPath="$PROJECT_DIR$/src/soundata/.idea/.name" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/searchSounds/.idea/Desktop.iml" beforeDir="false" afterPath="$PROJECT_DIR$/src/soundata/.idea/Desktop.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/searchSounds/.idea/inspectionProfiles/profiles_settings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/soundata/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/searchSounds/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/soundata/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/searchSounds/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/soundata/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/searchSounds/searchSounds.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/soundata/searchSounds.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/searchSounds/soundData.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/soundata/soundData.py" afterDir="false" />
-    </list>
+    <list default="true" id="20ececd4-ae2d-4e07-80d8-be7d29006314" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -202,13 +28,19 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "main",
-    "last_opened_file_path": "C:/Users/cris/OneDrive/Documentos/CRISTINA/UPF/CURSO 4/3r TRIM/MTL/MTL-Project"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/cris/OneDrive/Documentos/CRISTINA/UPF/CURSO 4/3r TRIM/MTL/MTL-Project&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\cris\OneDrive\Documentos\CRISTINA\UPF\CURSO 4\3r TRIM\MTL\MTL-Project\src\program" />
@@ -222,7 +54,16 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1684180118665</updated>
+      <workItem from="1684237627968" duration="3595000" />
+      <workItem from="1684256277582" duration="1414000" />
+      <workItem from="1684257771608" duration="1007000" />
     </task>
     <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/MTL_Project$datasetCreation.coverage" NAME="datasetCreation Coverage Results" MODIFIED="1684258349924" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/program" />
   </component>
 </project>
