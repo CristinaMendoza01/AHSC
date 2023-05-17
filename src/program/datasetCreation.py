@@ -20,8 +20,7 @@ apiCristina = "dCvdtqvTd7A4WhnDF3qSkTZafXKxVqQIxlCM85KR"
 
 ############################## TRAINING SOUNDS ######################################
 ######################### CRISTINA SOUNDS ##################################
-#d.download_sounds_freesound(query="scream", tag="voice", duration=10, directory="trainingSet", api_key=apiCristina, topNresults=50, featureExt='.json')
-#d.download_sounds_freesound(query="scream", tag="horror", duration=10, directory="trainingSet", api_key=apiCristina, topNresults=50, featureExt='.json')
+#d.download_sounds_freesound(query="scream", tag="voice", duration=10, directory="trainingSet", api_key=apiCristina, topNresults=100, featureExt='.json')
 
 ########################### SARA SOUNDS ####################################
 
@@ -45,8 +44,8 @@ apiCristina = "dCvdtqvTd7A4WhnDF3qSkTZafXKxVqQIxlCM85KR"
 #d.download_sounds_freesound(query="flute", tag="single-note", duration=10, directory="./src/program/testDownload", api_key=apiCristina, topNresults=15, featureExt='.json')
 
 # Part 2
-#print("\nPart 2: Do clustering 1 \n")
-# c.clustering()
+print("\nPart 2: Do clustering 1 \n")
+c.clustering()
 
 # Part 3
 print("\nPart 3: Do clustering 2\n")
