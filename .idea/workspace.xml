@@ -5,30 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="20ececd4-ae2d-4e07-80d8-be7d29006314" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/MTL-Project.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/MTL-Project.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/freesound-python-master/freesound-python-master/freesound_python.egg-info/SOURCES.txt" beforeDir="false" afterPath="$PROJECT_DIR$/freesound-python-master/freesound-python-master/freesound_python.egg-info/SOURCES.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/freesound-python-master/freesound-python-master/freesound_python.egg-info/dependency_links.txt" beforeDir="false" afterPath="$PROJECT_DIR$/freesound-python-master/freesound-python-master/freesound_python.egg-info/dependency_links.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/freesound-python-master/freesound-python-master/freesound_python.egg-info/requires.txt" beforeDir="false" afterPath="$PROJECT_DIR$/freesound-python-master/freesound-python-master/freesound_python.egg-info/requires.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/freesound-python-master/freesound-python-master/freesound_python.egg-info/top_level.txt" beforeDir="false" afterPath="$PROJECT_DIR$/freesound-python-master/freesound-python-master/freesound_python.egg-info/top_level.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/program/datasetCreation.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/program/datasetCreation.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/program/soundsClassifier.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/program/soundsClassifier.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/program/trainingSet/scream/219858/219858_3505274-lq.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/program/trainingSet/scream/219858/219858_3505274-lq.mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/program/trainingSet/scream/219862/219862_4095110-lq.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/program/trainingSet/scream/219862/219862_4095110-lq.mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/program/trainingSet/scream/238349/238349_4312441-lq.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/program/trainingSet/scream/238349/238349_4312441-lq.mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/program/trainingSet/scream/94581/94581_13258-lq.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/program/trainingSet/scream/94581/94581_13258-lq.mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/program/trainingSet/scream/94582/94582_13258-lq.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/program/trainingSet/scream/94582/94582_13258-lq.mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/program/trainingSet/scream/94584/94584_13258-lq.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/program/trainingSet/scream/94584/94584_13258-lq.mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/program/trainingSet/scream/94586/94586_13258-lq.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/program/trainingSet/scream/94586/94586_13258-lq.mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/program/trainingSet/scream/scream_SoundList.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/program/trainingSet/scream/scream_SoundList.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/program/clustering.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/program/clustering.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

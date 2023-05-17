@@ -75,7 +75,7 @@ def clustering():
     # no need to change the code from here
     anotOn = 0
     dataDetails = fetchDataDetails(inputDir)
-    colors = ['r', 'g', 'c', 'b', 'k', 'm', 'y']
+    colors = ['r', 'g', 'c', 'b', 'k', 'm', 'y', 'orange', 'w']
 
     plt.figure(figsize=(15, 10))
 
