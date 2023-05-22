@@ -8,6 +8,49 @@
       <change beforePath="$PROJECT_DIR$/.idea/MTL-Project.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/MTL-Project.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/freesound-python-master/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/freesound-python-master/.idea/freesound-python-master.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/freesound-python-master/.idea/inspectionProfiles/profiles_settings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/freesound-python-master/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/freesound-python-master/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/freesound-python-master/build/lib/freesound.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/freesound-python-master/freesound-python-master/.github/workflows/python-smoke-test.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/freesound-python-master/freesound-python-master/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/freesound-python-master/freesound-python-master/COPYING.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/freesound-python-master/freesound-python-master/Readme.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/freesound-python-master/freesound-python-master/dist/freesound_python-1.1-py3.10.egg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/freesound-python-master/freesound-python-master/dist/freesound_python-1.1-py3.8.egg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/freesound-python-master/freesound-python-master/doc/_static/ajax-loader.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/freesound-python-master/freesound-python-master/doc/_static/basic.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/freesound-python-master/freesound-python-master/doc/_static/comment-bright.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/freesound-python-master/freesound-python-master/doc/_static/comment-close.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/freesound-python-master/freesound-python-master/doc/_static/comment.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/freesound-python-master/freesound-python-master/doc/_static/default.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/freesound-python-master/freesound-python-master/doc/_static/doctools.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/freesound-python-master/freesound-python-master/doc/_static/down-pressed.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/freesound-python-master/freesound-python-master/doc/_static/down.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/freesound-python-master/freesound-python-master/doc/_static/file.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/freesound-python-master/freesound-python-master/doc/_static/jquery.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/freesound-python-master/freesound-python-master/doc/_static/minus.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/freesound-python-master/freesound-python-master/doc/_static/plus.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/freesound-python-master/freesound-python-master/doc/_static/pygments.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/freesound-python-master/freesound-python-master/doc/_static/searchtools.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/freesound-python-master/freesound-python-master/doc/_static/sidebar.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/freesound-python-master/freesound-python-master/doc/_static/underscore.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/freesound-python-master/freesound-python-master/doc/_static/up-pressed.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/freesound-python-master/freesound-python-master/doc/_static/up.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/freesound-python-master/freesound-python-master/doc/_static/websupport.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/freesound-python-master/freesound-python-master/doc/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/freesound-python-master/freesound-python-master/download_bookmarks_example.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/freesound-python-master/freesound-python-master/essentia_example.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/freesound-python-master/freesound-python-master/examples.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/freesound-python-master/freesound-python-master/freesound.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/freesound-python-master/freesound-python-master/freesound_python.egg-info/PKG-INFO" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/freesound-python-master/freesound-python-master/freesound_python.egg-info/SOURCES.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/freesound-python-master/freesound-python-master/freesound_python.egg-info/dependency_links.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/freesound-python-master/freesound-python-master/freesound_python.egg-info/requires.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/freesound-python-master/freesound-python-master/freesound_python.egg-info/top_level.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/freesound-python-master/freesound-python-master/setup.py" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -33,21 +76,21 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "main",
-    "last_opened_file_path": "C:/Users/cris/OneDrive/Documentos/CRISTINA/UPF/CURSO 4/3r TRIM/MTL/MTL-Project/src/program",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/cris/OneDrive/Documentos/CRISTINA/UPF/CURSO 4/3r TRIM/MTL/MTL-Project/src/program&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\cris\OneDrive\Documentos\CRISTINA\UPF\CURSO 4\3r TRIM\MTL\MTL-Project\src\program" />
