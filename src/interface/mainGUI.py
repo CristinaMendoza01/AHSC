@@ -1,4 +1,7 @@
 import tkinter as tk
+
+import canvas as canvas
+
 from getListOfSounds import *
 
 class Interface(tk.Tk):
@@ -26,8 +29,8 @@ class Interface(tk.Tk):
         self.screen_frame.configure(bg="#BE96EE")
         self.screen_frame.pack(side=tk.LEFT, expand=True, fill=tk.BOTH)
 
-        self.scrollbar = tk.Scrollbar(self.screen_frame)
-        self.scrollbar.pack(side=tk.RIGHT, fill=tk.Y)
+        # self.scrollbar = tk.Scrollbar(self.screen_frame)
+        # self.scrollbar.pack(side=tk.RIGHT, fill=tk.Y)
 
         self.category_label = tk.Label(self.button_frame, text="Categories:", font=("Arial", 15), fg="black", bg="#9D7CC5")
         self.category_label.pack(pady=10, padx=20)
@@ -56,7 +59,6 @@ class Interface(tk.Tk):
         #########################################################################################
 
         self.current_screen = None
-
     def show_screen1(self):
         self.clear_screen()
         self.current_screen = Screen1(self.screen_frame)
@@ -106,15 +108,32 @@ class Screen1(tk.Frame):
         super().__init__(master)
         self.configure(bg="#BE96EE")
 
-        label = tk.Label(self, text="Here are displayed the sounds with the tag Screaming")
+        # Create a canvas widget
+        canvas = tk.Canvas(self, bg="#BE96EE")
+        canvas.pack(side=tk.LEFT, fill=tk.BOTH, expand=True)
+
+        # Create a scrollbar and associate it with the canvas
+        scrollbar = tk.Scrollbar(self, command=canvas.yview)
+        scrollbar.pack(side=tk.RIGHT, fill=tk.Y)
+        canvas.configure(yscrollcommand=scrollbar.set)
+
+        # Create a frame inside the canvas to hold the content
+        inner_frame = tk.Frame(canvas, bg="#BE96EE")
+        canvas.create_window((0, 0), window=inner_frame, anchor=tk.NW)
+
+        label = tk.Label(inner_frame, text="Here are displayed the sounds with the tag Screaming")
         label.configure(font=("Arial", 12), bg="#BE96EE")
-        label.pack(pady=50)
+        label.pack(pady=50, padx=50)
 
         screamingSounds = getSounds(screamingDir)
         for sound in screamingSounds:
-            l = tk.Label(self, text=f"{sound} - {screamingDir.split('/')[-1]}")
+            l = tk.Label(inner_frame, text=f"{sound} - {screamingDir.split('/')[-1]}")
             l.configure(font=("Arial", 12), bg="#BE96EE")
             l.pack()
+
+        # Configure the canvas to scroll the inner frame
+        inner_frame.bind("<Configure>", lambda event: canvas.configure(scrollregion=canvas.bbox("all")))
+
 
 ##################################### CAR ENGINE ################################################
 class Screen2(tk.Frame):
@@ -122,15 +141,31 @@ class Screen2(tk.Frame):
         super().__init__(master)
         self.configure(bg="#BE96EE")
 
-        label = tk.Label(self, text="Here are displayed the sounds with the tag Car engine")
+        # Create a canvas widget
+        canvas = tk.Canvas(self, bg="#BE96EE")
+        canvas.pack(side=tk.LEFT, fill=tk.BOTH, expand=True)
+
+        # Create a scrollbar and associate it with the canvas
+        scrollbar = tk.Scrollbar(self, command=canvas.yview)
+        scrollbar.pack(side=tk.RIGHT, fill=tk.Y)
+        canvas.configure(yscrollcommand=scrollbar.set)
+
+        # Create a frame inside the canvas to hold the content
+        inner_frame = tk.Frame(canvas, bg="#BE96EE")
+        canvas.create_window((0, 0), window=inner_frame, anchor=tk.NW)
+
+        label = tk.Label(inner_frame, text="Here are displayed the sounds with the tag Car engine")
         label.configure(font=("Arial", 12), bg="#BE96EE")
-        label.pack(pady=50)
+        label.pack(pady=50, padx=50)
 
         carSounds = getSounds(carDir)
         for sound in carSounds:
-            l = tk.Label(self, text=f"{sound} - {carDir.split('/')[-1]}")
+            l = tk.Label(inner_frame, text=f"{sound} - {carDir.split('/')[-1]}")
             l.configure(font=("Arial", 12), bg="#BE96EE")
             l.pack()
+
+        # Configure the canvas to scroll the inner frame
+        inner_frame.bind("<Configure>", lambda event: canvas.configure(scrollregion=canvas.bbox("all")))
 
 ##################################### OWL #####################################################
 class Screen3(tk.Frame):
@@ -138,13 +173,26 @@ class Screen3(tk.Frame):
         super().__init__(master)
         self.configure(bg="#BE96EE")
 
-        label = tk.Label(self, text="Here are displayed the sounds with the tag Owl")
+        # Create a canvas widget
+        canvas = tk.Canvas(self, bg="#BE96EE")
+        canvas.pack(side=tk.LEFT, fill=tk.BOTH, expand=True)
+
+        # Create a scrollbar and associate it with the canvas
+        scrollbar = tk.Scrollbar(self, command=canvas.yview)
+        scrollbar.pack(side=tk.RIGHT, fill=tk.Y)
+        canvas.configure(yscrollcommand=scrollbar.set)
+
+        # Create a frame inside the canvas to hold the content
+        inner_frame = tk.Frame(canvas, bg="#BE96EE")
+        canvas.create_window((0, 0), window=inner_frame, anchor=tk.NW)
+
+        label = tk.Label(inner_frame, text="Here are displayed the sounds with the tag Owl")
         label.configure(font=("Arial", 12), bg="#BE96EE")
-        label.pack(pady=50)
+        label.pack(pady=50, padx=50)
 
         owlSounds = getSounds(owlDir)
         for sound in owlSounds:
-            l = tk.Label(self, text=f"{sound} - {owlDir.split('/')[-1]}")
+            l = tk.Label(inner_frame, text=f"{sound} - {owlDir.split('/')[-1]}")
             l.configure(font=("Arial", 12), bg="#BE96EE")
             l.pack()
 
@@ -154,13 +202,26 @@ class Screen4(tk.Frame):
         super().__init__(master)
         self.configure(bg="#BE96EE")
 
-        label = tk.Label(self, text="Here are displayed the sounds with the tag Knocking")
+        # Create a canvas widget
+        canvas = tk.Canvas(self, bg="#BE96EE")
+        canvas.pack(side=tk.LEFT, fill=tk.BOTH, expand=True)
+
+        # Create a scrollbar and associate it with the canvas
+        scrollbar = tk.Scrollbar(self, command=canvas.yview)
+        scrollbar.pack(side=tk.RIGHT, fill=tk.Y)
+        canvas.configure(yscrollcommand=scrollbar.set)
+
+        # Create a frame inside the canvas to hold the content
+        inner_frame = tk.Frame(canvas, bg="#BE96EE")
+        canvas.create_window((0, 0), window=inner_frame, anchor=tk.NW)
+
+        label = tk.Label(inner_frame, text="Here are displayed the sounds with the tag Knocking")
         label.configure(font=("Arial", 12), bg="#BE96EE")
-        label.pack(pady=50)
+        label.pack(pady=50, padx=50)
 
         knockSounds = getSounds(knockingDir)
         for sound in knockSounds:
-            l = tk.Label(self, text=f"{sound} - {knockingDir.split('/')[-1]}")
+            l = tk.Label(inner_frame, text=f"{sound} - {knockingDir.split('/')[-1]}")
             l.configure(font=("Arial", 12), bg="#BE96EE")
             l.pack()
 
@@ -170,13 +231,26 @@ class Screen5(tk.Frame):
         super().__init__(master)
         self.configure(bg="#BE96EE")
 
-        label = tk.Label(self, text="Here are displayed the sounds with the tag Rain")
+        # Create a canvas widget
+        canvas = tk.Canvas(self, bg="#BE96EE")
+        canvas.pack(side=tk.LEFT, fill=tk.BOTH, expand=True)
+
+        # Create a scrollbar and associate it with the canvas
+        scrollbar = tk.Scrollbar(self, command=canvas.yview)
+        scrollbar.pack(side=tk.RIGHT, fill=tk.Y)
+        canvas.configure(yscrollcommand=scrollbar.set)
+
+        # Create a frame inside the canvas to hold the content
+        inner_frame = tk.Frame(canvas, bg="#BE96EE")
+        canvas.create_window((0, 0), window=inner_frame, anchor=tk.NW)
+
+        label = tk.Label(inner_frame, text="Here are displayed the sounds with the tag Rain")
         label.configure(font=("Arial", 12), bg="#BE96EE")
-        label.pack(pady=50)
+        label.pack(pady=50, padx=50)
 
         rainSounds = getSounds(rainDir)
         for sound in rainSounds:
-            l = tk.Label(self, text=f"{sound} - {rainDir.split('/')[-1]}")
+            l = tk.Label(inner_frame, text=f"{sound} - {rainDir.split('/')[-1]}")
             l.configure(font=("Arial", 12), bg="#BE96EE")
             l.pack()
 
@@ -186,13 +260,26 @@ class Screen6(tk.Frame):
         super().__init__(master)
         self.configure(bg="#BE96EE")
 
-        label = tk.Label(self, text="Here are displayed the sounds with the tag Raven Bird")
+        # Create a canvas widget
+        canvas = tk.Canvas(self, bg="#BE96EE")
+        canvas.pack(side=tk.LEFT, fill=tk.BOTH, expand=True)
+
+        # Create a scrollbar and associate it with the canvas
+        scrollbar = tk.Scrollbar(self, command=canvas.yview)
+        scrollbar.pack(side=tk.RIGHT, fill=tk.Y)
+        canvas.configure(yscrollcommand=scrollbar.set)
+
+        # Create a frame inside the canvas to hold the content
+        inner_frame = tk.Frame(canvas, bg="#BE96EE")
+        canvas.create_window((0, 0), window=inner_frame, anchor=tk.NW)
+
+        label = tk.Label(inner_frame, text="Here are displayed the sounds with the tag Raven Bird")
         label.configure(font=("Arial", 12), bg="#BE96EE")
-        label.pack(pady=50)
+        label.pack(pady=50, padx=50)
 
         ravenSounds = getSounds(ravenDir)
         for sound in ravenSounds:
-            l = tk.Label(self, text=f"{sound} - {ravenDir.split('/')[-1]}")
+            l = tk.Label(inner_frame, text=f"{sound} - {ravenDir.split('/')[-1]}")
             l.configure(font=("Arial", 12), bg="#BE96EE")
             l.pack()
 
@@ -202,13 +289,26 @@ class Screen7(tk.Frame):
         super().__init__(master)
         self.configure(bg="#BE96EE")
 
-        label = tk.Label(self, text="Here are displayed the sounds with the tag Violin")
+        # Create a canvas widget
+        canvas = tk.Canvas(self, bg="#BE96EE")
+        canvas.pack(side=tk.LEFT, fill=tk.BOTH, expand=True)
+
+        # Create a scrollbar and associate it with the canvas
+        scrollbar = tk.Scrollbar(self, command=canvas.yview)
+        scrollbar.pack(side=tk.RIGHT, fill=tk.Y)
+        canvas.configure(yscrollcommand=scrollbar.set)
+
+        # Create a frame inside the canvas to hold the content
+        inner_frame = tk.Frame(canvas, bg="#BE96EE")
+        canvas.create_window((0, 0), window=inner_frame, anchor=tk.NW)
+
+        label = tk.Label(inner_frame, text="Here are displayed the sounds with the tag Violin")
         label.configure(font=("Arial", 12), bg="#BE96EE")
-        label.pack(pady=50)
+        label.pack(pady=50, padx=50)
 
         violinSounds = getSounds(violinDir)
         for sound in violinSounds:
-            l = tk.Label(self, text=f"{sound} - {violinDir.split('/')[-1]}")
+            l = tk.Label(inner_frame, text=f"{sound} - {violinDir.split('/')[-1]}")
             l.configure(font=("Arial", 12), bg="#BE96EE")
             l.pack()
 
