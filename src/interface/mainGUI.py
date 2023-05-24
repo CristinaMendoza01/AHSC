@@ -1,7 +1,5 @@
 import tkinter as tk
 
-import canvas as canvas
-
 from getListOfSounds import *
 
 class Interface(tk.Tk):
@@ -59,6 +57,8 @@ class Interface(tk.Tk):
         #########################################################################################
 
         self.current_screen = None
+
+    #################### FUNCTIONS TO SHOW THE SCREENS ##########################################
     def show_screen1(self):
         self.clear_screen()
         self.current_screen = Screen1(self.screen_frame)
@@ -101,7 +101,9 @@ class Interface(tk.Tk):
     def clear_screen(self):
         if self.current_screen:
             self.current_screen.pack_forget()
+    #########################################################################################
 
+##################################### SCREENS ####################################################
 ##################################### SCREAMING ##################################################
 class Screen1(tk.Frame):
     def __init__(self, master):
@@ -133,7 +135,6 @@ class Screen1(tk.Frame):
 
         # Configure the canvas to scroll the inner frame
         inner_frame.bind("<Configure>", lambda event: canvas.configure(scrollregion=canvas.bbox("all")))
-
 
 ##################################### CAR ENGINE ################################################
 class Screen2(tk.Frame):
@@ -311,7 +312,9 @@ class Screen7(tk.Frame):
             l = tk.Label(inner_frame, text=f"{sound} - {violinDir.split('/')[-1]}")
             l.configure(font=("Arial", 12), bg="#BE96EE")
             l.pack()
+#########################################################################################
 
+#### TO RUN THE INTERFACE ###############################################################
 if __name__ == "__main__":
     interface = Interface()
     interface.mainloop()
