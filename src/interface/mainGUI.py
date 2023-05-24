@@ -1,6 +1,10 @@
 import tkinter as tk
+import webbrowser
+import requests
 
 from getListOfSounds import *
+from retrieveSoundsAPI import *
+
 class Interface(tk.Tk):
     def __init__(self):
         super().__init__()
@@ -138,6 +142,7 @@ class Screen1(tk.Frame):
 
         screamingSounds = getSounds(screamingDir)
         for sound in screamingSounds:
+            retrieveSound(sound)
             l = tk.Label(inner_frame, text=f"{sound} - {screamingDir.split('/')[-1]}")
             l.configure(font=("Arial", 12), bg="#BE96EE")
             l.pack()
