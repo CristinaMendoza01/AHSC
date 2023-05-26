@@ -1,7 +1,7 @@
 import requests
 
 # Set the access token obtained after authentication
-access_token = "hyEcUHASVdnVrvslwoFtB6N00ZV7jR" # Caduca en un cierto tiempo
+access_token = "rvC9pZNJuaukbmoahh2lVaYFLtJddI" # Caduca en un cierto tiempo
 
 def retrieveSound(soundId):
     # Set the API endpoint URL for retrieving a sound by its ID
@@ -21,7 +21,7 @@ def retrieveSound(soundId):
     # Check if the request was successful
     if response.status_code == 200:
         sound_data = response.json()
-        print(sound_data)
+        # print(sound_data)
         # Get the URL of the sound preview
         sound_preview = sound_data["previews"]["preview-lq-mp3"]
         # print(sound_preview)

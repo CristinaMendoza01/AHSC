@@ -114,12 +114,15 @@ class Interface(tk.Tk):
     def clear_screen(self):
         if self.current_screen:
             self.current_screen.pack_forget()
+
+
     #########################################################################################
 
 ##################################### SCREENS ####################################################
 ##################################### SCREAMING ##################################################
 class Screen1(tk.Frame):
     def __init__(self, master):
+        global buttonClicked
         super().__init__(master)
         self.configure(bg="#BE96EE")
 
@@ -134,6 +137,7 @@ class Screen1(tk.Frame):
 
         # Create a frame inside the canvas to hold the content
         inner_frame = tk.Frame(canvas, bg="#BE96EE")
+        inner_frame.pack()
         canvas.create_window((0, 0), window=inner_frame, anchor=tk.NW)
 
         label = tk.Label(inner_frame, text="Here are displayed the sounds with the tag Screaming")
@@ -142,10 +146,11 @@ class Screen1(tk.Frame):
 
         screamingSounds = getSounds(screamingDir)
         for sound in screamingSounds:
-            retrieveSound(sound)
-            l = tk.Label(inner_frame, text=f"{sound} - {screamingDir.split('/')[-1]}")
-            l.configure(font=("Arial", 12), bg="#BE96EE")
-            l.pack()
+
+            response = retrieveSound(sound)
+
+            button = tk.Button(inner_frame, text=str(response['id']) + " - " + response['name'])
+            button.pack()
 
         # Configure the canvas to scroll the inner frame
         inner_frame.bind("<Configure>", lambda event: canvas.configure(scrollregion=canvas.bbox("all")))
@@ -175,9 +180,9 @@ class Screen2(tk.Frame):
 
         carSounds = getSounds(carDir)
         for sound in carSounds:
-            l = tk.Label(inner_frame, text=f"{sound} - {carDir.split('/')[-1]}")
-            l.configure(font=("Arial", 12), bg="#BE96EE")
-            l.pack()
+            response = retrieveSound(sound)
+            button = tk.Button(inner_frame, text=str(response['id']) + " - " + response['name'])
+            button.pack()
 
         # Configure the canvas to scroll the inner frame
         inner_frame.bind("<Configure>", lambda event: canvas.configure(scrollregion=canvas.bbox("all")))
