@@ -4,6 +4,7 @@ import requests
 
 from getListOfSounds import *
 from retrieveSoundsAPI import *
+from callAPI import callAPI
 
 
 def show_login(self):
@@ -202,6 +203,7 @@ class Screen(tk.Frame):
 #### TO RUN THE INTERFACE ###############################################################
 if __name__ == "__main__":
     interface = Interface()
+    # callAPI()
     # sounds = getSounds(violinDir)
     # for sound in sounds:
     #     res = retrieveSound(sound)

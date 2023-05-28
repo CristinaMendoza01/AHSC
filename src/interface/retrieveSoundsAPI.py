@@ -1,8 +1,8 @@
 import requests
-
+from callAPI import callAPI
 # Set the access token obtained after authentication
-access_token = "rvC9pZNJuaukbmoahh2lVaYFLtJddI" # Caduca en un cierto tiempo
-
+# access_token = "ic0aQBJW58gDN15YjxTwFWuFJNoLVh" # Caduca en un cierto tiempo
+access_token = callAPI()
 def retrieveSound(soundId):
     # Set the API endpoint URL for retrieving a sound by its ID
     sound_url = "https://freesound.org/apiv2/sounds/{sound_id}/"
