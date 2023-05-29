@@ -100,7 +100,7 @@ print(len(segment_files),'segment files created')
 ############################################################################################################# hasta aqui crea los segmentos.
 
 audio_path = mp3_files[1]
-features, features_frames = ess.MusicExtractor(lowlevelSilentFrames='drop',
+features, features_frames = ess.FreesoundExtractor(lowlevelSilentFrames='drop',
                                                       lowlevelFrameSize = 2048,
                                                       lowlevelHopSize = 1024,
                                                       lowlevelStats = ['mean', 'stdev'])(audio_path)
@@ -126,7 +126,7 @@ with open(data_file, 'w') as writer:
             print(file_count, "files processed, current file: ", filename)
 
         #Compute and write features for file
-        features, features_frames = ess.MusicExtractor(lowlevelSilentFrames='drop',
+        features, features_frames = ess.FreesoundExtractor(lowlevelSilentFrames='drop',
                                                       lowlevelFrameSize = 2048,
                                                       lowlevelHopSize = 1024,
                                                       lowlevelStats = ['mean', 'stdev'])(filename)

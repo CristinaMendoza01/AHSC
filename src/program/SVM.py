@@ -1,5 +1,4 @@
-''' LO QUE PASA ES QUE AL COGER LOS VALORES DE LOS AUDIOS DEL DATA.CSV, EL STROKE SE GUARDA EN EL NOMBRE DE LA CARPETA CON EL NUMBERO Y NO CON EL
-NOMBRE DE LA CLASE QUE QUEREMOS, ENTONCES LOS PLOTS NO LOS HACE BIEN.'''
+
 
 
 import pandas as pd
@@ -8,6 +7,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 from sklearn.model_selection import train_test_split
 from sklearn.metrics import confusion_matrix
+from sklearn.decomposition import PCA
 
 
 data_file = '/home/naiaragarmendia/Documents/GitHub/AHSC/src/program/data.csv'
@@ -22,12 +22,23 @@ print(data.head())
 #sns.relplot(x = "melbands_flatness_db.mean", y = "spectral_centroid.mean", hue = "stroke", data = data);
 #plt.show()
 
+# Aplicar PCA para reducir la dimensionalidad a 2 componentes principales
+pca = PCA(n_components=2)
+data_reduced = pca.fit_transform(data)
+
+# Crear el gráfico de dispersión de los datos reducidos
+plt.scatter(data_reduced[:, 0], data_reduced[:, 1])
+plt.xlabel('Componente Principal 1')
+plt.ylabel('Componente Principal 2')
+plt.title('Gráfico de Dispersión de Datos Reducidos')
+plt.show()
+
 data_modif = data.copy()
 
 #Let's use sklearn's preprocessing tools for applying normalisation to features
 from sklearn import preprocessing
 min_max_scaler = preprocessing.MinMaxScaler() # el minmaxScales los scala y los normaliza
-data_modif.iloc[:,:84] = min_max_scaler.fit_transform(data.iloc[:,:84].values)
+data_modif.iloc[:,:97] = min_max_scaler.fit_transform(data.iloc[:,:97].values)
 
 
 # Checking if our data is balanced (if not, we should balance it to prevent our model to be baised)
@@ -38,7 +49,7 @@ print(data_modif.stroke.value_counts())
 
 # categorizamos las 10 categorias en un valor numeral y las codificamos.
 # Input values put in a matrix, there are 84 features
-X = data_modif.iloc[:,:84].values
+X = data_modif.iloc[:,:97].values
 # Creating output values
 data_modif.stroke = pd.Categorical(data_modif.stroke)  # convert to categorical data
 y = np.array(data_modif.stroke.cat.codes)  # create label encoded outputs
