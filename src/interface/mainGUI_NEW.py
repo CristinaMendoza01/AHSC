@@ -1,14 +1,8 @@
 import tkinter as tk
 import webbrowser
-import requests
 
 from getListOfSounds import *
 from retrieveSoundsAPI import *
-from callAPI import callAPI
-
-
-def show_login(self):
-    webbrowser.open("https://freesound.org/home/login/")
 
 class Interface(tk.Tk):
     def __init__(self):
@@ -140,6 +134,8 @@ class Interface(tk.Tk):
     #########################################################################################
 
 ################################ OTHER FUNCTIONS ##################################################
+def show_login(self):
+    webbrowser.open("https://freesound.org/home/login/")
 def obtainInfoSounds(dir):
     sounds = getSounds(dir)
     return sounds
@@ -148,7 +144,6 @@ def obtainInfoSounds(dir):
 ##################################### SCREENS ####################################################
 class Screen(tk.Frame):
     def __init__(self, master):
-        global buttonClicked
         super().__init__(master)
         self.configure(bg="#BE96EE")
 
@@ -167,7 +162,7 @@ class Screen(tk.Frame):
         canvas.create_window((0, 0), window=inner_frame, anchor=tk.NW)
 
         sounds = []
-        if(interface.count == 0):
+        if(interface.count == 0):       # About Screen
             label = tk.Label(inner_frame, text="This project is called AHSC: Automatic Horror Sound Classification and it's about to create a software that classifies different horror sounds. \nBasically, we get horror sounds from Freesound (https://freesound.org/) and we create a software application. \nThis application classifies these sounds into different categories. \n\nAHSC is an innovative project developed as part of the Music Technology Workshop elective course for ICT engineering degrees at UPF. \nThe aim of this project is to develop a software application based on the 'Freesound' website to classify horror sounds by using a new \ntagging system created by us to classify these horror sounds automatically in subcategories. \n\nWith almost 12000 available horror-related sounds on the website without specific tags, \nthis project proposes a solution that involves using metadata and implementing classification algorithms to generate subcategories, \nwhich will allow for more accurate and specific searches. \n\nTo achieve this, the project employs the Python programming language and the Pycharm IDE, along with the powerful 'Essentia' \nlibraries that help with sound analysis and descriptor extraction, and the 'Scikit-learn' library for machine learning techniques.")
             label.configure(font=("Arial", 10), background="#BE96EE")
             label.pack(anchor='w')
@@ -176,21 +171,22 @@ class Screen(tk.Frame):
             label2.configure(font=("Arial", 10), background="#BE96EE")
             label2.pack()
 
-        elif(interface.count == 1):
+        elif(interface.count == 1):     # Screaming Screen
             sounds = obtainInfoSounds(screamingDir)
-        elif(interface.count == 2):
+        elif(interface.count == 2):     # Car Engine Screen
             sounds = obtainInfoSounds(carDir)
-        elif (interface.count == 3):
+        elif (interface.count == 3):    # Owl Screen
             sounds = obtainInfoSounds(owlDir)
-        elif (interface.count == 4):
+        elif (interface.count == 4):    # Knocking Screen
             sounds = obtainInfoSounds(knockingDir)
-        elif (interface.count == 5):
+        elif (interface.count == 5):    # Rain Screen
             sounds = obtainInfoSounds(rainDir)
-        elif (interface.count == 6):
+        elif (interface.count == 6):    # Raven Bird Screen
             sounds = obtainInfoSounds(ravenDir)
-        elif (interface.count == 7):
+        elif (interface.count == 7):    # Violin Screen
             sounds = obtainInfoSounds(violinDir)
 
+        # Code to display the sounds information
         for sound in sounds:
             response = retrieveSound(sound)
             button = tk.Button(inner_frame, text=response['name'])
@@ -203,9 +199,4 @@ class Screen(tk.Frame):
 #### TO RUN THE INTERFACE ###############################################################
 if __name__ == "__main__":
     interface = Interface()
-    # callAPI()
-    # sounds = getSounds(violinDir)
-    # for sound in sounds:
-    #     res = retrieveSound(sound)
-    #     print(res)
     interface.mainloop()

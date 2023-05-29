@@ -1,0 +1,1 @@
+This folder contains all the files needed for the dataset creation of the project and other interesting files.

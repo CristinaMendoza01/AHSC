@@ -1,0 +1,1 @@
+This folder contains all the files for the classification part of the project.

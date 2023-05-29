@@ -7,30 +7,45 @@ AHSC is an innovative project developed as part of the Music Technology Workshop
 
 To achieve this, the project employs the Python programming language and the Pycharm IDE, along with the powerful 'Essentia' libraries that help with sound analysis and descriptor extraction, and the 'Scikit-learn' library for machine learning techniques.
 
-# Installation
+# Installation for the developer
 1. Download or clone the repository locally
-2. Open the project with PyCharm
+2. Open the project with an IDE
 3. Open the terminal on the folder freesound-python-master and run the command: python setup.py install
-4. Run the project
+4. Install the libraries required
+5. Run the project
+
+# Installation for the user
+First option:
+1. Download or clone the repository locally
+2. Go to the folder executable
+3. Double click the .exe
+
+Second option:
+1. In GitHub, go to the folder executable
+2. Download the file .exe
+3. Double click the .exe
 
 # Requirements
-* Python version 3.8
-* Numpy version 1.20.0
-
-You must install the versions of these libraries to be able to run the project. 
+See the REQUIREMENTS.txt
 
 # Organization
-The code is in the folder AHSC/src and it is divided into different folders, depending on the task (interface, classification, ...). The main folder is the program folder.
+The code is in the folder AHSC/src and it is divided into different folders:
+* interface: Contains all the files related to the code part to develop the visual interface of AHSC.
+* program: Currently, contains all the files needed to execute the program, included the trainingSet and testingSet, but it will disappear.
+* training: It will contain all the files and dataset related to train the classifier.
+* classification: It will contain all the files related to classify the dataset.
+* dataset: It will contain all the .json files of the horror sounds that will be classified.
+* mir-data notebook: Contains a file mirdata.py which is the notebook from mridangam_stroke called mridangam_stroke_classification_example.ipynb
 
 # Team members
-Arnau Adan
+Arnau Adan (arnau.adani01@estudiant.upf.edu)
 
-Víctor Alcaide
+Víctor Alcaide (victor.alcaide02@estudiant.upf.edu)
 
-Sara Barbé
+Sara Barbé (sara.barbe01@estudiant.upf.edu)
 
-Laia Duch
+Laia Duch (laia.duch01@estudiant.upf.edu)
 
-Naiara Garmendia
+Naiara Garmendia (naiara.garmendia01@estudiant.upf.edu)
 
-Cristina Mendoza
+Cristina Mendoza (cristina.mendoza01@estudiant.upf.edu)

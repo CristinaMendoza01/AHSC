@@ -1,0 +1,1 @@
+This folder contains all the .json files of the horror sounds.
