@@ -28,6 +28,7 @@ data_reduced = pca.fit_transform(data)
 
 # Crear el gráfico de dispersión de los datos reducidos
 plt.scatter(data_reduced[:, 0], data_reduced[:, 1])
+
 plt.xlabel('Componente Principal 1')
 plt.ylabel('Componente Principal 2')
 plt.title('Gráfico de Dispersión de Datos Reducidos')

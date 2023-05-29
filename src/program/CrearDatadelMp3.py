@@ -13,10 +13,10 @@ import pandas as pd
 
 
 
-dataset_path = '/home/naiaragarmendia/Documents/GitHub/AHSC/src/program/trainingSet'  # Reemplaza con la ruta correcta a tu carpeta dataset
+dataset_path = '/home/naiaragarmendia/Desktop/recortado'  # Reemplaza con la ruta correcta a tu carpeta dataset
 
 classes = []
-mp3_files = glob.glob(dataset_path + '/**/*.mp3', recursive=True)  # Obtener la lista de archivos MP3
+mp3_files = glob.glob(dataset_path + '/**/*.wav', recursive=True)  # Obtener la lista de archivos MP3
 
 
 for i, mp3_file in enumerate(mp3_files):
@@ -35,7 +35,6 @@ for i, mp3_file in enumerate(mp3_files):
     folder_name = os.path.basename(folder_name)  # Obtener el nombre de la carpeta
     stroke_dict[folder_name].append(mp3_file)  # Agregar la data al diccionario
 
-print(stroke_dict['bell'])
 ###########################################################################################################################
 
 # Raw-data preprocess analysis parameters
