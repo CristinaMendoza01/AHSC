@@ -14,7 +14,7 @@ import pandas as pd
 def create_data_csv(input_dataset):
     classes = []
     audio_files = glob.glob(input_dataset + '/**/*.wav', recursive=True)
-    print(enumerate(audio_files))
+
     for i, audio_file in enumerate(audio_files):
         folder_path = os.path.dirname(audio_file)  # Obtener la ruta de la carpeta
         folder_name = os.path.basename(folder_path) # Obtener el nombre de la carpeta
@@ -49,7 +49,7 @@ def create_data_csv(input_dataset):
 
 
 
-    data_file = '/home/naiaragarmendia/Documents/GitHub/AHSC/src/program/data2.csv'
+    data_file = '/src/program/Data/data5.csv'
     file_count = 0
 
     with open(data_file, 'w') as writer:
@@ -66,21 +66,26 @@ def create_data_csv(input_dataset):
             # Obtener el nombre de la carpeta
             folder_name = os.path.basename(os.path.dirname(filename))
 
+            try:
+                # Calcular y escribir características para el archivo
+                features, features_frames = ess.FreesoundExtractor(lowlevelSilentFrames='drop',
+                                                                   lowlevelFrameSize=2048,
+                                                                   lowlevelHopSize=1024,
+                                                                   lowlevelStats=['mean', 'stdev'])(filename)
 
-            # Calcular y escribir características para el archivo
-            features, features_frames = ess.FreesoundExtractor(lowlevelSilentFrames='drop',
-                                                               lowlevelFrameSize=2048,
-                                                               lowlevelHopSize=1024,
-                                                               lowlevelStats=['mean', 'stdev'])(filename)
+                selected_features = [features[descriptor] for descriptor in scalar_lowlevel_descriptors]
+                line2write = str(selected_features)[1:-1] + ',' + folder_name + '\n'
+                writer.write(line2write)
 
-            selected_features = [features[descriptor] for descriptor in scalar_lowlevel_descriptors]
-            line2write = str(selected_features)[1:-1] + ',' + folder_name + '\n'
-            writer.write(line2write)
+            except Exception as e:
+                print(f"Error al procesar el archivo {filename}: {str(e)}")
+
+                continue
 
     print("A total of", file_count, "files processed")
     return data_file
 
-input_dataset = '/home/naiaragarmendia/Desktop/Dataset_recortado/Musical Instruments Recortado/bell'
+input_dataset = '/home/naiaragarmendia/Desktop/Dataset_recortado/Voices Recortado/RespiratorySounds'
 audio_files = glob.glob(input_dataset + '/**/*.wav', recursive=True)
 print(len(audio_files))
 

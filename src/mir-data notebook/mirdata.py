@@ -119,7 +119,7 @@ plt.legend(loc="best");
 
 
 main_data_dir = '/content'
-segments_dir = os.path.join(main_data_dir,'segments')
+segments_dir = os.path.join(main_data_dir,'Data')
 if not os.path.exists(segments_dir): #creating the directory
     os.mkdir(segments_dir)
 
@@ -130,10 +130,10 @@ for stroke, files in stroke_dict.items():
         stroke_id =  sample_file.split('__')[-1].split('.')[0]
         x = ess.MonoLoader(filename = sample_file, sampleRate = fs)()
         (x, NRG, split_decision_func, start_indexes, stop_indexes) = split_file(sample_file, params)
-        #Croping segments
+        #Croping Data
         for start, stop in zip(start_indexes, stop_indexes):
             x_seg = x[start: stop]
-            #Final check for amplitude (to avoid silent segments selection due to noise in split function)
+            #Final check for amplitude (to avoid silent Data selection due to noise in split function)
             if(np.max(np.abs(x_seg)) > 0.05):
                 #Amplitude normalisation
                 x_seg = x_seg / np.max(np.abs(x_seg))
@@ -166,7 +166,7 @@ scalar_lowlevel_descriptors = [descriptor for descriptor in features.descriptorN
 print("Subset of features to be considered:\n",scalar_lowlevel_descriptors)
 
 
-# Extracting features and writing in data.csv file in the segments folder
+# Extracting features and writing in data.csv file in the Data folder
 #  each line in the data.csv file represents a sample with features and the class information as the last element
 data_file = '/content/data.csv'
 file_count = 0
