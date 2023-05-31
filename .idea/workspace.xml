@@ -5,16 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="20ececd4-ae2d-4e07-80d8-be7d29006314" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/MTL-Project.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/MTL-Project.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/mir-data notebook/mirdata.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/mir-data notebook/mirdata.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/program/Descriptors.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/program/Descriptors.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/program/FullData.csv" beforeDir="false" afterPath="$PROJECT_DIR$/src/program/FullData.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/program/SVM.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/program/SVM.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/program/data.csv" beforeDir="false" afterPath="$PROJECT_DIR$/src/program/Data/data.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/program/data1.csv" beforeDir="false" afterPath="$PROJECT_DIR$/src/program/Data/data1.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/program/data2.csv" beforeDir="false" afterPath="$PROJECT_DIR$/src/program/Data/data2.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/program/juntarData.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/program/juntarData.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />

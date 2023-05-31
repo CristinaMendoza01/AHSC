@@ -23,8 +23,10 @@ def SVM_classifier(best):
 
 
 
-    sns.relplot(x = "melbands_flatness_db.mean", y = "spectral_centroid.mean", hue = "clase", data = data);
-    plt.show()
+    #sns.relplot(x = "melbands_flatness_db.mean", y = "spectral_centroid.mean", hue = "clase", data = data);
+    #plt.show()
+
+
 
 
 

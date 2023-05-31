@@ -49,7 +49,7 @@ def create_data_csv(input_dataset):
 
 
 
-    data_file = '/src/program/Data/data5.csv'
+    data_file = '/home/naiaragarmendia/Documents/GitHub/AHSC/src/program/Data/data12.csv'
     file_count = 0
 
     with open(data_file, 'w') as writer:
@@ -85,8 +85,7 @@ def create_data_csv(input_dataset):
     print("A total of", file_count, "files processed")
     return data_file
 
-input_dataset = '/home/naiaragarmendia/Desktop/Dataset_recortado/Voices Recortado/RespiratorySounds'
-audio_files = glob.glob(input_dataset + '/**/*.wav', recursive=True)
-print(len(audio_files))
+input_dataset = '/home/naiaragarmendia/Desktop/Dataset_recortado/Electronic Sounds Recortado/Alarm'
+
 
 data = create_data_csv(input_dataset)
