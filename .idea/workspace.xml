@@ -5,11 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="20ececd4-ae2d-4e07-80d8-be7d29006314" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/program/Descriptors.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/program/Descriptors.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/program/FullData.csv" beforeDir="false" afterPath="$PROJECT_DIR$/src/program/FullData.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/program/SVM.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/program/SVM.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/program/juntarData.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/program/juntarData.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/interface/mainGUI_NEW.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/interface/mainGUI_NEW.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -55,6 +53,7 @@
       <recent name="C:\Users\cris\OneDrive\Documentos\CRISTINA\UPF\CURSO 4\3r TRIM\MTL\MTL-Project\src\program" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\cris\OneDrive\Documentos\CRISTINA\UPF\CURSO 4\3r TRIM\MTL\MTL-Project\src\interface" />
       <recent name="$PROJECT_DIR$/src/program/Data" />
       <recent name="C:\Users\cris\OneDrive\Documentos\CRISTINA\UPF\CURSO 4\3r TRIM\MTL\MTL-Project\src\program" />
     </key>

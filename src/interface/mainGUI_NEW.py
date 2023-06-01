@@ -1,8 +1,15 @@
+import shutil
 import tkinter as tk
+import wave
 import webbrowser
+
+import soundfile
 
 from getListOfSounds import *
 from retrieveSoundsAPI import *
+from soundImprover import *
+
+import simpleaudio as sa
 
 class Interface(tk.Tk):
     def __init__(self):
@@ -139,6 +146,38 @@ def show_login(self):
 def obtainInfoSounds(dir):
     sounds = getSounds(dir)
     return sounds
+
+def mp3towav(sound):
+    wavsound = sound + '.wav'
+    return wavsound
+def playSound(response):
+    if (interface.count == 1):  # Screaming Screen
+        dir = screamingDir
+    elif (interface.count == 2):  # Car Engine Screen
+        dir = carDir
+    elif (interface.count == 3):  # Owl Screen
+        dir = owlDir
+    elif (interface.count == 4):  # Knocking Screen
+        dir = knockingDir
+    elif (interface.count == 5):  # Rain Screen
+        dir = rainDir
+    elif (interface.count == 6):  # Raven Bird Screen
+        dir = ravenDir
+    elif (interface.count == 7):  # Violin Screen
+        dir = violinDir
+
+    soundDir = dir + '/' + str(response['id'])
+
+    elements = os.listdir(soundDir)
+
+    for elem in elements:
+        if(elem.split('.')[-1] == 'mp3'):
+            sound = mp3towav(elem.split('.')[0])
+            improveSound(soundDir + '/' + elem, soundDir + '/' + sound)
+
+            wave_obj = sa.WaveObject.from_wave_file(soundDir + '/' + sound)
+            play_obj = wave_obj.play()
+
 ###################################################################################################
 
 ##################################### SCREENS ####################################################
@@ -189,8 +228,17 @@ class Screen(tk.Frame):
         # Code to display the sounds information
         for sound in sounds:
             response = retrieveSound(sound)
-            button = tk.Button(inner_frame, text=response['name'])
-            button.pack(pady=5, padx=5, anchor="w")
+            print(response)
+            container = tk.Frame(inner_frame)
+            container.pack(pady=20)
+
+            label = tk.Label(container, text=response['name'])
+            label.pack()
+
+            play_label = tk.Label(container, text="Play")
+            play_label.pack()
+            play_label.config(background="#9D7CC5", cursor="hand2")
+            play_label.bind("<Button-1>", lambda event, sound=response: playSound(sound))
 
         # Configure the canvas to scroll the inner frame
         inner_frame.bind("<Configure>", lambda event: canvas.configure(scrollregion=canvas.bbox("all")))
