@@ -10,7 +10,7 @@ from sklearn.metrics import confusion_matrix
 from sklearn.decomposition import PCA
 
 def SVM_classifier(best):
-    data_file = '/home/naiaragarmendia/Documents/GitHub/AHSC/src/program/FullData.csv'
+    data_file = 'FullData.csv'
 
     # Leer el archivo CSV
     data = pd.read_csv(data_file)
@@ -23,8 +23,8 @@ def SVM_classifier(best):
 
 
 
-    #sns.relplot(x = "melbands_flatness_db.mean", y = "spectral_centroid.mean", hue = "clase", data = data);
-    #plt.show()
+    sns.relplot(x = "melbands_flatness_db.mean", y = "spectral_centroid.mean", hue = "clase", data = data);
+    plt.show()
 
 
 
