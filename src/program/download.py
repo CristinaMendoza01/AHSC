@@ -72,7 +72,7 @@ def download_sounds_freesound(query, tag, duration, directory, api_key, topNresu
     pageNo = 1
     sndCnt = 0
     indCnt = 0
-    totalSnds = min(results.count, 200)  # System quits after trying to download after 200 times
+    totalSnds = results.count
     downloadedSounds = []
 
     if(not bool(os.listdir(dir_path))):
@@ -82,15 +82,14 @@ def download_sounds_freesound(query, tag, duration, directory, api_key, topNresu
         # Creating directories to store output and downloading sounds and their descriptors
         while (1):
             if indCnt >= totalSnds:
-                print(
-                    "Not able to download required number of sounds. Either there are not enough search results on freesound for your search query and filtering constraints or something is wrong with this script.")
+                print(f"required number of sounds. {results.count}")
                 break
             sound = results[indCnt - ((pageNo - 1) * page_size)]
 
             outDir = os.path.join(dir_path + '/' + str(sound.id))
             os.mkdir(outDir)
 
-            print("Downloading mp3 preview and descriptors for sound with id: %s" % str(sound.id))
+            print(f"{indCnt} Downloading mp3 preview and descriptors for sound with id: {sound.id}")
 
             mp3Path = os.path.join(outDir + '/' + str(sound.previews.preview_lq_mp3.split("/")[-1]))
             #print(mp3Path)
@@ -110,10 +109,11 @@ def download_sounds_freesound(query, tag, duration, directory, api_key, topNresu
                 sndCnt += 1
                 downloadedSounds.append([str(sound.id), sound.url])
 
-            except:
-                if os.path.exists(dir_path):
-                    print("Bad")
-                    shutil.rmtree(dir_path)
+            except FileExistsError:
+                print("We had a file exist error but try to continue..")
+                continue
+            except Exception as e:
+                print(f"Error: {e}")
 
             indCnt += 1
 
@@ -131,3 +131,17 @@ def download_sounds_freesound(query, tag, duration, directory, api_key, topNresu
         fid.close()
     else:
         print("Not empty")
+
+
+if __name__ == "__main__":
+    apiCristina = "dCvdtqvTd7A4WhnDF3qSkTZafXKxVqQIxlCM85KR"
+
+    download_sounds_freesound(
+        query="horror",
+        tag=None,
+        duration=10,
+        directory="sounds",
+        api_key=apiCristina,
+        topNresults=12000,
+        featureExt='.json'
+    )
