@@ -41,15 +41,15 @@ def create_data_csv(input_dataset):
                                                           lowlevelStats = ['mean', 'stdev'])(audio_path)
 
     scalar_lowlevel_descriptors = [descriptor for descriptor in features.descriptorNames() if 'lowlevel' in descriptor and isinstance(features[descriptor], float)]
-    print("Subset of features to be considered:\n",scalar_lowlevel_descriptors)
-    print(len(scalar_lowlevel_descriptors))
+    ##print("Subset of features to be considered:\n",scalar_lowlevel_descriptors)
+    ##print(len(scalar_lowlevel_descriptors))
 
 
     ############################################################################################################
 
 
 
-    data_file = '/home/naiaragarmendia/Documents/GitHub/AHSC/src/program/Data/data12.csv'
+    data_file = '/home/naiaragarmendia/Documents/GitHub/AHSC/src/program/HorrorSounds/horror1.csv'
     file_count = 0
 
     with open(data_file, 'w') as writer:
@@ -85,7 +85,68 @@ def create_data_csv(input_dataset):
     print("A total of", file_count, "files processed")
     return data_file
 
-input_dataset = '/home/naiaragarmendia/Desktop/Dataset_recortado/Electronic Sounds Recortado/Alarm'
+input_dataset = '/home/naiaragarmendia/Desktop/horror sounds'
 
 
-data = create_data_csv(input_dataset)
+#data = create_data_csv(input_dataset)
+
+def corpus_audios(input_dataset):
+    audio_files = glob.glob(input_dataset + '/**/*.mp3', recursive=True)
+
+
+    ############################################################################################################# hasta aqui crea los segmentos.
+    #getting the names of the descriptors for FreesoundExtractor
+    audio_path = audio_files[1]
+    features, features_frames = ess.FreesoundExtractor(lowlevelSilentFrames='drop',
+                                                          lowlevelFrameSize = 2048,
+                                                          lowlevelHopSize = 1024,
+                                                          lowlevelStats = ['mean', 'stdev'])(audio_path)
+
+    scalar_lowlevel_descriptors = [descriptor for descriptor in features.descriptorNames() if 'lowlevel' in descriptor and isinstance(features[descriptor], float)]
+    ##print("Subset of features to be considered:\n",scalar_lowlevel_descriptors)
+    ##print(len(scalar_lowlevel_descriptors))
+
+
+    ############################################################################################################
+
+
+
+    data_file = '/home/naiaragarmendia/Documents/GitHub/AHSC/src/program/HorrorSounds/horror2.csv'
+    file_count = 0
+
+    with open(data_file, 'w') as writer:
+        # Agregar nombres de columna como la primera línea en el archivo CSV
+        line2write = ','.join(scalar_lowlevel_descriptors).replace('lowlevel.','')  + '\n'
+        writer.write(line2write)
+
+        for filename in audio_files:
+            file_count += 1
+
+            #if file_count % 20 == 0:  # Imprimir el nombre de un archivo cada 20 archivos
+            print(file_count, "files processed, current file:", filename)
+
+            # Obtener el nombre de la carpeta
+            folder_name = os.path.basename(os.path.dirname(filename))
+
+            try:
+                # Calcular y escribir características para el archivo
+                features, features_frames = ess.FreesoundExtractor(lowlevelSilentFrames='drop',
+                                                                   lowlevelFrameSize=2048,
+                                                                   lowlevelHopSize=1024,
+                                                                   lowlevelStats=['mean', 'stdev'])(filename)
+
+                selected_features = [features[descriptor] for descriptor in scalar_lowlevel_descriptors]
+                line2write = str(selected_features)[1:-1] + ',' + folder_name + '\n'
+                writer.write(line2write)
+
+            except Exception as e:
+                print(f"Error al procesar el archivo {filename}: {str(e)}")
+
+                continue
+
+    print("A total of", file_count, "files processed")
+    return data_file
+input_dataset = '/home/naiaragarmendia/Desktop/horror sounds2/recortado'
+
+
+data = corpus_audios(input_dataset)

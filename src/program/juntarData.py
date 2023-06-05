@@ -18,11 +18,11 @@ def juntar_archivos(DataPath):
     resultado = pd.concat(dfs, ignore_index=True)
 
 
-    resultado.to_csv('FullData.csv', index=False)
+    resultado.to_csv('HorrorSounds.csv', index=False)
 
 
-#DataPath = '/home/naiaragarmendia/Documents/GitHub/AHSC/src/program/Data'
-#juntar_archivos(DataPath)
+DataPath = '/home/naiaragarmendia/Documents/GitHub/AHSC/src/program/HorrorSounds'
+juntar_archivos(DataPath)
 
 
 def plot_data(dataPath): ##Me da error
@@ -39,5 +39,5 @@ def plot_data(dataPath): ##Me da error
 
     plt.show()
 
-dataPath = '/home/naiaragarmendia/Documents/GitHub/AHSC/src/program/Data/data.csv'
-plot_data(dataPath)
+#dataPath = '/home/naiaragarmendia/Documents/GitHub/AHSC/src/program/Data/data.csv'
+#plot_data(dataPath)
