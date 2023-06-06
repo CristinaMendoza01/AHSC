@@ -1,16 +1,19 @@
 import pandas as pd
 import numpy as np
 from scipy import stats
+import os
 
 # Load the data from the CSV file
 data_file = './FullData.csv'
 data = pd.read_csv(data_file)
 
-# Select the relevant descriptors
-descriptors = ['melbands_flatness_db.mean', 'spectral_centroid.mean']
+cols = data.columns.tolist()
+
+descriptors = cols[:-1]
+print(descriptors)
 
 # Calculate outlier bounds using interquartile range (IQR)
-def calculate_outlier_bounds(data, descriptor, k=1.5):
+def calculate_outlier_bounds(data, descriptor, k=3):
     q1 = np.percentile(data[descriptor], 25)
     q3 = np.percentile(data[descriptor], 75)
     iqr = q3 - q1
