@@ -14,6 +14,7 @@ import pandas as pd
 def create_data_csv(input_dataset):
     classes = []
     audio_files = glob.glob(input_dataset + '/**/*.wav', recursive=True)
+    print(len(audio_files))
 
     for i, audio_file in enumerate(audio_files):
         folder_path = os.path.dirname(audio_file)  # Obtener la ruta de la carpeta
@@ -49,12 +50,12 @@ def create_data_csv(input_dataset):
 
 
 
-    data_file = '/home/naiaragarmendia/Documents/GitHub/AHSC/src/program/HorrorSounds/horror1.csv'
+    data_file = '/home/naiaragarmendia/Documents/GitHub/AHSC/src/program/Data/data+id.csv'
     file_count = 0
 
     with open(data_file, 'w') as writer:
         # Agregar nombres de columna como la primera línea en el archivo CSV
-        line2write = ','.join(scalar_lowlevel_descriptors + ['clase']).replace('lowlevel.','')  + '\n'
+        line2write = ','.join(scalar_lowlevel_descriptors + ['clase']+['stroke']).replace('lowlevel.','')  + '\n'
         writer.write(line2write)
 
         for filename in audio_files:
@@ -85,10 +86,9 @@ def create_data_csv(input_dataset):
     print("A total of", file_count, "files processed")
     return data_file
 
-input_dataset = '/home/naiaragarmendia/Desktop/horror sounds'
+input_dataset = '/home/naiaragarmendia/Desktop/Dataset_recortado'
 
-
-#data = create_data_csv(input_dataset)
+data = create_data_csv(input_dataset)
 
 def corpus_audios(input_dataset):
     audio_files = glob.glob(input_dataset + '/**/*.mp3', recursive=True)
@@ -149,4 +149,4 @@ def corpus_audios(input_dataset):
 input_dataset = '/home/naiaragarmendia/Desktop/horror sounds2/recortado'
 
 
-data = corpus_audios(input_dataset)
+#data = corpus_audios(input_dataset)
