@@ -63,13 +63,10 @@ class Interface(tk.Tk):
 
         ################################### LOGO ###############################################
         # Load the image
-        self.image = Image.open("C:/Users/cris/Downloads/logo.png")  # Replace with the path to your image
-        self.image = self.image.resize((80, 80))  # Resize the image as desired
-        self.photo = ImageTk.PhotoImage(self.image)
+
 
         # Create a label to display the image
-        self.image_label = tk.Label(self.top_frame, image=self.photo)
-        self.image_label.grid(row=0, column=0, sticky="nw", padx=30, pady=10)
+
         # self.image_label.pack()
         #########################################################################################
 

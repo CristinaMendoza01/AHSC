@@ -18,10 +18,10 @@ def juntar_archivos(DataPath):
     resultado = pd.concat(dfs, ignore_index=True)
 
 
-    resultado.to_csv('HorrorSounds.csv', index=False)
+    resultado.to_csv('fulldata.csv', index=False)
 
 
-DataPath = '/home/naiaragarmendia/Documents/GitHub/AHSC/src/program/HorrorSounds'
+DataPath = '/home/naiaragarmendia/Documents/GitHub/AHSC/src/program/Data'
 juntar_archivos(DataPath)
 
 
