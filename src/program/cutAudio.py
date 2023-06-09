@@ -14,8 +14,12 @@ def recortar_audio(input_path, output_path, duracion):
 
 
 # Carpeta que contiene los archivos de audio
+<<<<<<< Updated upstream
 carpeta_principal = '/home/naiaragarmendia/Desktop/horror sounds2'
 # carpeta_principal = "C:/Users/laiad\Desktop/new classes/howl_mp3"
+=======
+carpeta_principal = '/home/naiaragarmendia/Desktop/nightmare '
+>>>>>>> Stashed changes
 
 # Duración deseada en segundos
 duracion_deseada = 5
@@ -30,7 +34,7 @@ for archivo in archivos_audio:
 
     carpeta_salida = os.path.dirname(archivo)
 
-    carpeta_salida_recortada = os.path.join(carpeta_salida, 'recortado')
+    carpeta_salida_recortada = os.path.join(carpeta_salida, 'nightmare ')
     archivo_salida = os.path.join(carpeta_salida_recortada, nombre_archivo)
 
     os.makedirs(carpeta_salida_recortada, exist_ok=True)

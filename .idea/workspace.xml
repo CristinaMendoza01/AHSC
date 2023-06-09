@@ -5,11 +5,34 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="20ececd4-ae2d-4e07-80d8-be7d29006314" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/MTL-Project.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/MTL-Project.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/program/Data/datacreature.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+<<<<<<< Updated upstream
       <change beforePath="$PROJECT_DIR$/src/program/cutAudio.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/program/cutAudio.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/program/download.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/program/download.py" afterDir="false" />
+=======
+      <change beforePath="$PROJECT_DIR$/src/program/Data/data+id.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/program/Data/data1.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/program/Data/data10.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/program/Data/data11.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/program/Data/data12.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/program/Data/data13.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/program/Data/data14.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/program/Data/data15.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/program/Data/data16.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/program/Data/data2.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/program/Data/data3.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/program/Data/data4.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/program/Data/data5.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/program/Data/data6.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/program/Data/data7.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/program/Data/data8.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/program/Data/data9.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/program/SVM.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/program/SVM.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/program/cutAudio.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/program/cutAudio.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/program/dataDescriptors.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/program/dataDescriptors.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/program/resultados.csv" beforeDir="false" afterPath="$PROJECT_DIR$/src/program/resultados.csv" afterDir="false" />
+>>>>>>> Stashed changes
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

@@ -46,34 +46,9 @@ def SVM_classifier(best):
 
     # Here we didn't pick the lowest number, 108 for frog, wind, screaming, which is too small.
     # Instead, we choose the 480 of "gunshot"
-    min_number = data_modif.clase.value_counts()['gunshot']
-    door_data = data_modif[data_modif.clase == 'door_window'].sample(n=min_number, random_state=42)
-    guitar_data = data_modif[data_modif.clase == 'guitar'].sample(n=min_number)
-    bowed_data = data_modif[data_modif.clase == 'bowedStringInstruments'].sample(n=min_number)
-    bird_data = data_modif[data_modif.clase == 'bird'].sample(n=min_number)
-    respiratory_data = data_modif[data_modif.clase == 'RespiratorySounds'].sample(n=min_number)
-    alarm_data = data_modif[data_modif.clase == 'Alarm'].sample(n=min_number)
-    laughter_data = data_modif[data_modif.clase == 'laughter'].sample(n=min_number)
-    rain_data = data_modif[data_modif.clase == 'rain'].sample(n=min_number)
-    interf_data = data_modif[data_modif.clase == 'interferences'].sample(n=min_number)
-    bell_data = data_modif[data_modif.clase == 'bell'].sample(n=min_number)
-    keyboard_data = data_modif[data_modif.clase == 'keyboardInstruments'].sample(n=min_number)
-    household_data = data_modif[data_modif.clase == 'household_appliances'].sample(n=min_number)
-    hits_data = data_modif[data_modif.clase == 'hits_footsteps'].sample(n=min_number)
-    insect_data = data_modif[data_modif.clase == 'Insect'].sample(n=min_number)
-    fire_data = data_modif[data_modif.clase == 'fire'].sample(n=min_number)
-    gunshot_data = data_modif[data_modif.clase == 'gunshot'].sample(n=min_number)
-    wind_data = data_modif[data_modif.clase == 'wind']
-    screaming_data = data_modif[data_modif.clase == 'Screaming']
-    frog_data = data_modif[data_modif.clase == 'frog']
-    explosion_data = data_modif[data_modif.clase == 'explosion'].sample(n=min_number)
-    telephone_data = data_modif[data_modif.clase == 'telephone'].sample(n=min_number)
-    tools_data = data_modif[data_modif.clase == 'tools'].sample(n=min_number)
-    motor_vehicle_data = data_modif[data_modif.clase == 'motor vehicle'].sample(n=min_number)
+
 
     # Merging after downsampling
-    data_modif = pd.concat(
-        [door_data, explosion_data, telephone_data, guitar_data, tools_data,bowed_data, bird_data, motor_vehicle_data,respiratory_data, alarm_data, laughter_data, rain_data, interf_data, bell_data, keyboard_data, household_data, hits_data, insect_data, fire_data, gunshot_data, wind_data, screaming_data, frog_data])
 
     # Checking the balance again
     data_modif.clase.value_counts()

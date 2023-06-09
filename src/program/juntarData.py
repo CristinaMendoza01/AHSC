@@ -39,5 +39,5 @@ def plot_data(dataPath): ##Me da error
 
     plt.show()
 
-#dataPath = '/home/naiaragarmendia/Documents/GitHub/AHSC/src/program/Data/data.csv'
+#dataPath = '/home/naiaragarmendia/Documents/GitHub/AHSC/src/program/Data/v'
 #plot_data(dataPath)

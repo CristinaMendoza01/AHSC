@@ -37,7 +37,8 @@ def create_data_csv(input_dataset):
 
     ############################################################################################################
 
-    data_file = '/home/naiaragarmendia/Documents/GitHub/AHSC/src/program/Data/data+id.csv'
+    data_file = '/home/naiaragarmendia/Documents/GitHub/AHSC/src/program/Data/datanightmare.csv'
+
     file_count = 0
 
     with open(data_file, 'w') as writer:
@@ -77,7 +78,7 @@ def create_data_csv(input_dataset):
 
 def seleccionar_audios(input_dataset, cantidad_maxima):
 
-    audio_files = glob.glob(input_dataset + '/**/*.wav', recursive=True)
+    audio_files = glob.glob(input_dataset + '/**/*.mp3', recursive=True)
     class_audios = {}
     classes =[]
     for i, audio_file in enumerate(audio_files):
@@ -107,8 +108,8 @@ def seleccionar_audios(input_dataset, cantidad_maxima):
 
 
 
-input_dataset = '/home/naiaragarmendia/Desktop/Dataset_recortado'
-audio_files = seleccionar_audios(input_dataset, 480)
+input_dataset = '/home/naiaragarmendia/Desktop/Dataset_recortado/nightmare '
+audio_files = seleccionar_audios(input_dataset, 500)
 create_data_csv(audio_files)
 
 
