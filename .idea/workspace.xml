@@ -8,13 +8,8 @@
       <change beforePath="$PROJECT_DIR$/.idea/MTL-Project.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/MTL-Project.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/interface/mainGUI.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/interface/mainGUI.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/program/Data/data+id.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/program/Descriptors.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/program/Descriptors.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/program/HorrorSounds.csv" beforeDir="false" afterPath="$PROJECT_DIR$/src/program/HorrorSounds.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/program/SVM.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/program/SVM.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/program/juntarData.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/program/juntarData.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/program/resultados.csv" beforeDir="false" afterPath="$PROJECT_DIR$/src/program/resultados.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/program/cutAudio.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/program/cutAudio.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/program/download.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/program/download.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -137,11 +132,16 @@
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/SVM_py$mainGUI.coverage" NAME="mainGUI Coverage Results" MODIFIED="1686052536491" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/interface" />
+    <SUITE FILE_PATH="coverage/download_py$download.coverage" NAME="download Coverage Results" MODIFIED="1686303097832" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/program" />
     <SUITE FILE_PATH="coverage/MTL_Project$datasetCreation.coverage" NAME="datasetCreation Coverage Results" MODIFIED="1684258349924" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/program" />
+    <SUITE FILE_PATH="coverage/download_py$splitFolders.coverage" NAME="splitFolders Coverage Results" MODIFIED="1686303338523" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/program" />
+    <SUITE FILE_PATH="coverage/download_py$cutAudio.coverage" NAME="cutAudio Coverage Results" MODIFIED="1686302208622" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/program" />
     <SUITE FILE_PATH="coverage/datasetCreation_py$datasetCreation.coverage" NAME="datasetCreation Coverage Results" MODIFIED="1684261928021" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/program" />
     <SUITE FILE_PATH="coverage/SVM_py$SVM.coverage" NAME="SVM Coverage Results" MODIFIED="1686064354873" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/program" />
     <SUITE FILE_PATH="coverage/SVM_py$program.coverage" NAME="program Coverage Results" MODIFIED="1686047995998" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src" />
     <SUITE FILE_PATH="coverage/SVM_py$plotData.coverage" NAME="plotData Coverage Results" MODIFIED="1686052362324" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/program" />
+    <SUITE FILE_PATH="coverage/download_py$removeOutliers.coverage" NAME="removeOutliers Coverage Results" MODIFIED="1686300057730" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/program" />
+    <SUITE FILE_PATH="coverage/download_py$changeName.coverage" NAME="changeName Coverage Results" MODIFIED="1686303370547" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/program" />
     <SUITE FILE_PATH="coverage/SVM_py$removeOutliers.coverage" NAME="removeOutliers Coverage Results" MODIFIED="1686051882765" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/program" />
   </component>
 </project>

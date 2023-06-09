@@ -15,6 +15,7 @@ def recortar_audio(input_path, output_path, duracion):
 
 # Carpeta que contiene los archivos de audio
 carpeta_principal = '/home/naiaragarmendia/Desktop/horror sounds2'
+# carpeta_principal = "C:/Users/laiad\Desktop/new classes/howl_mp3"
 
 # Duración deseada en segundos
 duracion_deseada = 5
