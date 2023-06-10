@@ -1,5 +1,7 @@
+import io
 import shutil
 import tkinter as tk
+import urllib
 import wave
 import webbrowser
 from PIL import ImageTk, Image
@@ -17,7 +19,8 @@ import simpleaudio as sa
 
 bg1 = "#BA93D6" # Principal
 bg2 = "#CDB3DF" # Screen
-bg3 = "#B283D4" # Container
+bg3 = "white" # Container
+bg4 = "#41056D"
 
 class Interface(tk.Tk):
     def __init__(self):
@@ -63,10 +66,13 @@ class Interface(tk.Tk):
 
         ################################### LOGO ###############################################
         # Load the image
-
+        self.image = Image.open("logo.png")  # Replace with the path to your image
+        self.image = self.image.resize((80, 80))  # Resize the image as desired
+        self.photo = ImageTk.PhotoImage(self.image)
 
         # Create a label to display the image
-
+        self.image_label = tk.Label(self.top_frame, image=self.photo)
+        self.image_label.grid(row=0, column=0, sticky="nw", padx=30, pady=10)
         # self.image_label.pack()
         #########################################################################################
 
@@ -192,15 +198,31 @@ def playSound(response):
     elements = os.listdir(soundDir)
 
     for elem in elements:
-        if(elem.split('.')[-1] == 'mp3'):
+        if(elem.split('.')[-1] == 'mp3' or elem.split('.')[-1] == 'wav'):
             sound = mp3towav(elem.split('.')[0])
-            improveSound(soundDir + '/' + elem, soundDir + '/' + sound)
+            if os.path.exists(soundDir + '/' + sound):
+                os.remove(soundDir + '/' + sound)
 
+            improveSound(soundDir + '/' + elem, soundDir + '/' + sound)
             wave_obj = sa.WaveObject.from_wave_file(soundDir + '/' + sound)
             play_obj = wave_obj.play()
 
 def downloadSound(sound):
     webbrowser.open(sound['download'])
+
+def getSoundImage(sound):
+    image_url = sound['images']['waveform_m']
+    image_data = urllib.request.urlopen(image_url).read()
+    image = Image.open(io.BytesIO(image_data))
+    photo = ImageTk.PhotoImage(image)
+
+    return photo
+
+def moreInfo(sound):
+    webbrowser.open(sound["url"])
+
+def seeLicense(sound):
+    webbrowser.open(sound["license"])
 ###################################################################################################
 
 ##################################### SCREENS ####################################################
@@ -267,43 +289,58 @@ class Screen(tk.Frame):
             container.pack(pady=20, padx=10, fill=tk.X)
 
             # Load the image
-            image_url = response['images']['waveform_m']
-            image_response = requests.get(image_url)
-            image = Image.open(BytesIO(image_response.content))
-            photo = ImageTk.PhotoImage(image)
+            photo = getSoundImage(response)
 
             # Create a label to display the image
             image_label = tk.Label(container, image=photo)
+            image_label.image = photo
             image_label.grid(row=0, column=0, sticky="nw", padx=10, pady=20)
+            image_label.bind("<Button-1>", lambda event, sound=response: playSound(sound))
 
-            name_label = tk.Label(container, text=response['name'] + ' - ' + response['username'])
-            name_label.configure(fg="black", background=bg3)
+            name_label = tk.Label(container, text=response['name'])
+            name_label.configure(fg=bg4, background=bg3)
             name_label.grid(row=0, column=1, padx=10, pady=20)
 
-            id_label = tk.Label(container, text=str(response['id']))
-            id_label.configure(fg="black", background=bg3)
-            id_label.grid(row=0, column=2, padx=10, pady=20)
+            username_label = tk.Label(container, text=response['username'])
+            username_label.configure(fg=bg4, background=bg3)
+            username_label.grid(row=1, column=1, padx=10, pady=20)
 
-            play_label = tk.Label(container, text="Play")
-            play_label.grid(row=0, column=3, padx=10, pady=20)
-            play_label.config(cursor="hand2", fg="black", background=bg3)
-            play_label.bind("<Button-1>", lambda event, sound=response: playSound(sound))
+            # play_label = tk.Label(container, text="Play")
+            # play_label.grid(row=0, column=3, padx=10, pady=20)
+            # play_label.config(cursor="hand2", fg="black", background=bg3)
+            # play_label.bind("<Button-1>", lambda event, sound=response: playSound(sound))
 
-            download_label = tk.Label(container, text="Download")
-            download_label.grid(row=0, column=4, padx=10, pady=20)
-            download_label.config( cursor="hand2", fg="black", background=bg3)
+            icon_path = "download.png"
+            svg_image = Image.open(icon_path)
+            svg_image = svg_image.resize((20, 20))
+            icon = ImageTk.PhotoImage(svg_image)
+            download_label = tk.Label(container, image=icon)
+            download_label.image = icon
             download_label.bind("<Button-1>", lambda event, sound=response: downloadSound(sound))
+            download_label.grid(row=0, column=2, padx=10, pady=20)
+            # download_label = tk.Label(container, text="Download")
+            # download_label.grid(row=0, column=2, padx=10, pady=20)
+            # download_label.config( cursor="hand2", fg="black", background=bg3)
+            # download_label.bind("<Button-1>", lambda event, sound=response: downloadSound(sound))
 
-            i = 1
+            info_label = tk.Label(container, text="More info")
+            info_label.grid(row=0, column=3, padx=10, pady=20)
+            info_label.config( cursor="hand2", fg=bg4, background=bg3)
+            info_label.bind("<Button-1>", lambda event, sound=response: moreInfo(sound))
+
+            i = 2
             for tag in response['tags']:
                 tags_label = tk.Label(container, text=tag)
-                tags_label.configure(fg="black", background=bg3)
+                tags_label.configure(fg=bg4, background=bg3)
                 tags_label.grid(row=1, column=i, pady=20, padx=10)
                 i += 1
 
-            license_label = tk.Label(container, text="License: " + response['license'])
-            license_label.configure(fg="black", background=bg3)
+            license_label = tk.Label(container, text="License")
+            license_label.configure(fg=bg4, background=bg3)
             license_label.grid(row=1, column=0, padx=10, pady=20)
+            license_label.bind("<Button-1>", lambda event, sound=response: seeLicense(sound))
+
+            # print(response['license'])
 
         # Configure the canvas to scroll the inner frame
         inner_frame.bind("<Configure>", lambda event: canvas.configure(scrollregion=canvas.bbox("all")))
