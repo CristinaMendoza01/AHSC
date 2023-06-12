@@ -6,6 +6,7 @@ from sklearn.model_selection import train_test_split
 from sklearn.metrics import confusion_matrix
 from sklearn.decomposition import PCA
 import csv
+from sklearn import preprocessing
 
 def SVM_classifier(best):
     data_file = 'fulldata.csv'
@@ -24,7 +25,7 @@ def SVM_classifier(best):
     # Let's use sklearn's preprocessing tools for applying normalisation to features
     from sklearn import preprocessing
     min_max_scaler = preprocessing.MinMaxScaler()
-    data_modif.iloc[:, :96] = min_max_scaler.fit_transform(data.iloc[:, :96].values)
+    data_modif.iloc[:, :95] = min_max_scaler.fit_transform(data.iloc[:, :95].values)
 
     # Selecciona todas las columnas excepto la última
     #cols = data_modif.columns[:-1]
@@ -57,11 +58,16 @@ def SVM_classifier(best):
 
     # categorizamos las 10 categorias en un valor numeral y las codificamos.
     # Input values put in a matrix, there are 84 features
-    X = data_modif.iloc[:, :96].values
+    X = data_modif.iloc[:, :95].values
 
     # Creating output values
     data_modif.clase = pd.Categorical(data_modif.clase)  # convert to categorical data
     y = np.array(data_modif.clase.cat.codes)  # create label encoded outputs
+
+    for i in range(len(y)):
+       print('label:', y[i], "classe: ", data_modif.clase[i])
+
+
     # Print the first sample
     print("Features of the first sample: ", X[0])
     print("Class of the first sample: ", y[0])
@@ -115,3 +121,65 @@ def SVM_classifier(best):
 
 a = 0.2
 accuracy, y_test, y_pred, clf = SVM_classifier(a)
+
+
+
+def classify_new_sounds(new_sounds, clf, min_max_scaler):
+    normalized_sounds = new_sounds.copy()
+
+    # Aplica la normalización a los nuevos datos
+    normalized_sounds.iloc[:, :95] = min_max_scaler.fit_transform(new_sounds.iloc[:, :95].values)
+
+    # Clasifica los nuevos datos utilizando el modelo SVM
+    predictions = clf.predict(normalized_sounds)
+
+    horror_sounds = pd.read_csv("horrorsounds+id.csv")
+
+    # Crear una lista de resultados que contenga el id, las tres categorías con las probabilidades más altas
+    results = []
+    for i in range(len(new_data)):
+        sound_id = horror_sounds.iloc[i, -1]  # Obtener el id de cada sonido de la última columna del archivo de entrada
+        probabilities = clf.predict_proba(normalized_sounds.iloc[i:i + 1])[0]  # Obtener las probabilidades de todas las categorías para el sonido
+        top_classes = np.argsort(probabilities)[-5:][::-1]  # Obtener los índices de las tres categorías con las probabilidades más altas
+        top_probabilities = probabilities[top_classes]  # Obtener las probabilidades correspondientes a las tres categorías
+
+        result_row = [sound_id]  # Agregar el id del sonido al resultado
+
+        # Agregar las tres categorías y sus respectivas probabilidades al resultado
+        for class_index, probability in zip(top_classes, top_probabilities):
+            #predicted_class = predictions[i]  # Obtener la clase predicha para el sonido
+            result_row.extend([class_index, probability])
+
+        results.append(result_row)
+
+    # Crear un nuevo DataFrame con los resultados
+    columns = ['sound_id', 'category_1', 'prob_1', 'category_2', 'prob_2', 'category_3', 'prob_3', 'category_4', 'prob_4', 'category_5', 'prob_5']
+    results_df = pd.DataFrame(results, columns=columns)
+
+    # Guardar los resultados en un nuevo archivo CSV
+    results_csv_file = 'results.csv'  # Nombre del nuevo archivo CSV
+    results_df.to_csv(results_csv_file, index=False)
+
+    return predictions
+
+
+
+# Supongamos que tienes nuevos sonidos en la matriz 'new_sounds'
+new_data_file = 'new_horrorsounds.csv'
+
+# Leer el archivo CSV
+new_data = pd.read_csv(new_data_file)
+min_max_scaler = preprocessing.MinMaxScaler()
+
+# Clasifica los nuevos sonidos utilizando el modelo SVM entrenado
+predictions = classify_new_sounds(new_data, clf, min_max_scaler)
+
+# Imprime las predicciones de clase
+print(predictions)
+
+
+
+
+
+
+

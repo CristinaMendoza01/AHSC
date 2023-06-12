@@ -27,7 +27,7 @@ def corpus_audios(input_dataset):
 
     ############################################################################################################
 
-    data_file = '/home/naiaragarmendia/Documents/GitHub/AHSC/src/program/HorrorSounds/horror+id.csv'
+    data_file = '/home/naiaragarmendia/Documents/GitHub/AHSC/src/program/HorrorSounds/horrorsounds.csv'
     file_count = 0
 
     with open(data_file, 'w') as writer:
