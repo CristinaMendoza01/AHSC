@@ -17,8 +17,8 @@ def improveSound(oldSound, newSound):
     data, samplerate = soundfile.read(newSound)
     soundfile.write(newSound, data, samplerate)
 
-    # Now try to open the file with wave
-    with wave.open(newSound) as file:
-        print('File opened!')
+    # # Now try to open the file with wave
+    # with wave.open(newSound) as file:
+    #     print('File opened!')
 
 # improveSound("hi.mp3", "hi.wav")

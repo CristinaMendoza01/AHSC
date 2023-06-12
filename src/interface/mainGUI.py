@@ -200,10 +200,17 @@ def playSound(response):
     for elem in elements:
         if(elem.split('.')[-1] == 'mp3' or elem.split('.')[-1] == 'wav'):
             sound = mp3towav(elem.split('.')[0])
+            # If the .wav file of the sound exists
             if os.path.exists(soundDir + '/' + sound):
-                os.remove(soundDir + '/' + sound)
+                # Open the file with wave
+                wave.open(soundDir + '/' + sound)
+            else:
+                # Make a copy of the .wav sound locally
+                improveSound(soundDir + '/' + elem, soundDir + '/' + sound)
+                # Open the file with wave
+                wave.open(soundDir + '/' + sound)
 
-            improveSound(soundDir + '/' + elem, soundDir + '/' + sound)
+            # Play the sound
             wave_obj = sa.WaveObject.from_wave_file(soundDir + '/' + sound)
             play_obj = wave_obj.play()
 
