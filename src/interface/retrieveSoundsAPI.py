@@ -1,14 +1,15 @@
 import requests
+from getAuthorizationGUI import authcode
 from callAPI import callAPI
+
+# Obtain the authorization code that the user has entried
+authorization_code = authcode
 # Set the access token obtained after authentication
-# access_token = "ic0aQBJW58gDN15YjxTwFWuFJNoLVh" # Caduca en un cierto tiempo
-access_token = callAPI()
+access_token = callAPI(authorization_code)
+# print("Hola:", access_token)
 def retrieveSound(soundId):
     # Set the API endpoint URL for retrieving a sound by its ID
     sound_url = "https://freesound.org/apiv2/sounds/{sound_id}/"
-
-    # Set the sound ID of the sound you want to play
-    # sound_id = "9429"  # Replace with the actual sound ID
 
     # Set the headers with the access token
     headers = {
@@ -21,11 +22,8 @@ def retrieveSound(soundId):
     # Check if the request was successful
     if response.status_code == 200:
         sound_data = response.json()
-        # print(sound_data)
         # Get the URL of the sound preview
         sound_preview = sound_data["previews"]["preview-lq-mp3"]
-        # print(sound_preview)
-
     else:
         print("Error occurred while retrieving the sound.")
 

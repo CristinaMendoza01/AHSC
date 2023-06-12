@@ -1,15 +1,7 @@
 import io
-import shutil
-import tkinter as tk
 import urllib
-import wave
 import webbrowser
 from PIL import ImageTk, Image
-from io import BytesIO
-
-import requests
-
-import soundfile
 
 from getListOfSounds import *
 from retrieveSoundsAPI import *
@@ -20,7 +12,7 @@ import simpleaudio as sa
 bg1 = "#BA93D6" # Principal
 bg2 = "#CDB3DF" # Screen
 bg3 = "white" # Container
-bg4 = "#41056D"
+bg4 = "#41056D" # Container letter
 
 class Interface(tk.Tk):
     def __init__(self):
@@ -58,9 +50,7 @@ class Interface(tk.Tk):
         self.category_label.pack(pady=10, padx=20)
 
         self.login_label = tk.Label(self.top_frame, text="Login", fg="black", font=("Arial", 10))
-        # self.login_label.pack(pady=10)
         self.login_label.grid(row=0, column=2, pady=10)
-        # Configuring the label as a link
         self.login_label.configure(background=bg1, cursor="hand2", justify="center")
         self.login_label.bind("<Button-1>", show_login)
 
@@ -107,6 +97,7 @@ class Interface(tk.Tk):
 
     #################### FUNCTIONS TO SHOW THE SCREENS ##########################################
     count = 0
+
     def show_about(self):
         interface.count = 0
         self.clear_screen()
