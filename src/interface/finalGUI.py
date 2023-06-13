@@ -3,10 +3,12 @@ import os
 import urllib
 import webbrowser
 from PIL import ImageTk, Image
+from pydub import AudioSegment
+from pydub.playback import play
 
-from getListOfSounds import *
 from retrieveSoundsAPI import *
 from soundImprover import *
+from readCSV import *
 
 import simpleaudio as sa
 
@@ -96,14 +98,14 @@ class Interface(tk.Tk):
                                  relief=tk.FLAT, borderwidth=0, fg="black")
         self.button4.pack()
 
-        self.button5 = tk.Button(self.button_frame, text="Rain", command=self.show_screen5, background=bg1, relief=tk.FLAT, borderwidth=0, fg="black")
-        self.button5.pack()
-
-        self.button6 = tk.Button(self.button_frame, text="Raven Bird", command=self.show_screen6, background=bg1, relief=tk.FLAT, borderwidth=0, fg="black")
-        self.button6.pack()
-
-        self.button7 = tk.Button(self.button_frame, text="Violin", command=self.show_screen7, background=bg1, relief=tk.FLAT, borderwidth=0, fg="black")
-        self.button7.pack()
+        # self.button5 = tk.Button(self.button_frame, text="Rain", command=self.show_screen5, background=bg1, relief=tk.FLAT, borderwidth=0, fg="black")
+        # self.button5.pack()
+        #
+        # self.button6 = tk.Button(self.button_frame, text="Raven Bird", command=self.show_screen6, background=bg1, relief=tk.FLAT, borderwidth=0, fg="black")
+        # self.button6.pack()
+        #
+        # self.button7 = tk.Button(self.button_frame, text="Violin", command=self.show_screen7, background=bg1, relief=tk.FLAT, borderwidth=0, fg="black")
+        # self.button7.pack()
         #########################################################################################
 
         self.current_screen = None
@@ -145,26 +147,26 @@ class Interface(tk.Tk):
         self.current_screen.pack(expand=True, fill=tk.BOTH)
         # self.current_screen.bind_scrollbar(self.scrollbar)
 
-    def show_screen5(self):
-        interface.count = 5
-        self.clear_screen()
-        self.current_screen = Screen(self.screen_frame)
-        self.current_screen.pack(expand=True, fill=tk.BOTH)
-        # self.current_screen.bind_scrollbar(self.scrollbar)
-
-    def show_screen6(self):
-        interface.count = 6
-        self.clear_screen()
-        self.current_screen = Screen(self.screen_frame)
-        self.current_screen.pack(expand=True, fill=tk.BOTH)
-        # self.current_screen.bind_scrollbar(self.scrollbar)
-
-    def show_screen7(self):
-        interface.count = 7
-        self.clear_screen()
-        self.current_screen = Screen(self.screen_frame)
-        self.current_screen.pack(expand=True, fill=tk.BOTH)
-        # self.current_screen.bind_scrollbar(self.scrollbar)
+    # def show_screen5(self):
+    #     interface.count = 5
+    #     self.clear_screen()
+    #     self.current_screen = Screen(self.screen_frame)
+    #     self.current_screen.pack(expand=True, fill=tk.BOTH)
+    #     # self.current_screen.bind_scrollbar(self.scrollbar)
+    #
+    # def show_screen6(self):
+    #     interface.count = 6
+    #     self.clear_screen()
+    #     self.current_screen = Screen(self.screen_frame)
+    #     self.current_screen.pack(expand=True, fill=tk.BOTH)
+    #     # self.current_screen.bind_scrollbar(self.scrollbar)
+    #
+    # def show_screen7(self):
+    #     interface.count = 7
+    #     self.clear_screen()
+    #     self.current_screen = Screen(self.screen_frame)
+    #     self.current_screen.pack(expand=True, fill=tk.BOTH)
+    #     # self.current_screen.bind_scrollbar(self.scrollbar)
     def clear_screen(self):
         if self.current_screen:
             self.current_screen.pack_forget()
@@ -174,53 +176,25 @@ class Interface(tk.Tk):
 ################################ OTHER FUNCTIONS ##################################################
 def show_login(self):
     webbrowser.open("https://freesound.org/home/login/")
-def obtainInfoSounds(dir):
-    sounds = getSounds(dir)
-    return sounds
+# def obtainInfoSounds(dir):
+#     sounds = getSounds(dir)
+#     return sounds
 
 def mp3towav(sound):
     wavsound = sound + '.wav'
     return wavsound
+def playSound(sound):
+    # Obtain url from the sound
+    sound_url = sound['url']
+    # Download the sound
+    response = requests.get(sound_url)
+    audio_content = response.content
+    # Play the sound
+    audio = AudioSegment.from_file(io.BytesIO(audio_content))
+    play(audio)
 
-def playSound(response):
-    if (interface.count == 1):  # Screaming Screen
-        dir = screamingDir
-    elif (interface.count == 2):  # Car Engine Screen
-        dir = carDir
-    elif (interface.count == 3):  # Owl Screen
-        dir = owlDir
-    elif (interface.count == 4):  # Knocking Screen
-        dir = knockingDir
-    elif (interface.count == 5):  # Rain Screen
-        dir = rainDir
-    elif (interface.count == 6):  # Raven Bird Screen
-        dir = ravenDir
-    elif (interface.count == 7):  # Violin Screen
-        dir = violinDir
-
-    soundDir = dir + '/' + str(response['id'])
-
-    elements = os.listdir(soundDir)
-
-    for elem in elements:
-        if(elem.split('.')[-1] == 'mp3' or elem.split('.')[-1] == 'wav'):
-            sound = mp3towav(elem.split('.')[0])
-            # If the .wav file of the sound exists
-            if os.path.exists(soundDir + '/' + sound):
-                # Open the file with wave
-                wave.open(soundDir + '/' + sound)
-            else:
-                # Make a copy of the .wav sound locally
-                improveSound(soundDir + '/' + elem, soundDir + '/' + sound)
-                # Open the file with wave
-                wave.open(soundDir + '/' + sound)
-
-            # Play the sound
-            wave_obj = sa.WaveObject.from_wave_file(soundDir + '/' + sound)
-            play_obj = wave_obj.play()
 def downloadSound(sound):
     webbrowser.open(sound['download'])
-
 def getSoundImage(sound):
     image_url = sound['images']['waveform_m']
     image_data = urllib.request.urlopen(image_url).read()
@@ -277,23 +251,23 @@ class Screen(tk.Frame):
             label2.pack(pady=10, padx=10)
 
         elif(interface.count == 1):     # Screaming Screen
-            sounds = obtainInfoSounds(screamingDir)
-            # sounds = alarmSounds
+            # sounds = obtainInfoSounds(screamingDir)
+            sounds = alarmSounds
         elif(interface.count == 2):     # Car Engine Screen
-            sounds = obtainInfoSounds(carDir)
-            # sounds = insectSounds
+            # sounds = obtainInfoSounds(carDir)
+            sounds = insectSounds
         elif (interface.count == 3):    # Owl Screen
-            sounds = obtainInfoSounds(owlDir)
-            # sounds = respiratorySounds
+            # sounds = obtainInfoSounds(owlDir)
+            sounds = respiratorySounds
         elif (interface.count == 4):    # Knocking Screen
-            sounds = obtainInfoSounds(knockingDir)
-            # sounds = screamingSounds
-        elif (interface.count == 5):    # Rain Screen
-            sounds = obtainInfoSounds(rainDir)
-        elif (interface.count == 6):    # Raven Bird Screen
-            sounds = obtainInfoSounds(ravenDir)
-        elif (interface.count == 7):    # Violin Screen
-            sounds = obtainInfoSounds(violinDir)
+            # sounds = obtainInfoSounds(knockingDir)
+            sounds = screamingSounds
+        # elif (interface.count == 5):    # Rain Screen
+        #     sounds = obtainInfoSounds(rainDir)
+        # elif (interface.count == 6):    # Raven Bird Screen
+        #     sounds = obtainInfoSounds(ravenDir)
+        # elif (interface.count == 7):    # Violin Screen
+        #     sounds = obtainInfoSounds(violinDir)
 
         # Code to display the sounds information
         for sound in sounds:
