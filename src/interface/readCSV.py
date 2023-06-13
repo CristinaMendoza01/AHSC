@@ -61,7 +61,7 @@ with open('../program/results.csv', 'r') as file:
         # print(num_cat_1)
         if(num_cat_1 == str(0)):
             alarmSounds.append(sound_id)
-            alarmProbs.append(((num_cat_1, prob_1), (num_cat_2, prob_2), (num_cat_3, prob_3), (num_cat_4, prob_4), (num_cat_5, prob_5)))
+            alarmProbs.append(prob_1)
 
         if (num_cat_1 == str(1)):
             insectSounds.append(sound_id)
@@ -77,6 +77,6 @@ with open('../program/results.csv', 'r') as file:
 
 # print(screamingProbs)
 
-# PROBS
+# # PROBS
 # for s in screamingProbs:
-#     print(s)
+#     print(s[])

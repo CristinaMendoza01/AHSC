@@ -1,10 +1,11 @@
 import io
 import os
 import urllib
+import urllib.request
 import webbrowser
+import wave
+
 from PIL import ImageTk, Image
-from pydub import AudioSegment
-from pydub.playback import play
 
 from retrieveSoundsAPI import *
 from soundImprover import *
@@ -185,13 +186,17 @@ def mp3towav(sound):
     return wavsound
 def playSound(sound):
     # Obtain url from the sound
-    sound_url = sound['url']
-    # Download the sound
-    response = requests.get(sound_url)
-    audio_content = response.content
-    # Play the sound
-    audio = AudioSegment.from_file(io.BytesIO(audio_content))
-    play(audio)
+    sound_url = sound['previews']['preview-hq-mp3']
+    store_name1 = sound_url.split('/')[-1]
+    sound_dir = "../dataset/interfaceSounds/" + store_name1
+    urllib.request.urlretrieve(sound_url, sound_dir)
+    store_name2 = mp3towav(store_name1)
+    sound_dir2 = "../dataset/interfaceSounds/" + store_name2
+
+    improveSound(sound_dir, sound_dir2)
+    wave.open(sound_dir2)
+    wave_obj = sa.WaveObject.from_wave_file(sound_dir2)
+    play_obj = wave_obj.play()
 
 def downloadSound(sound):
     webbrowser.open(sound['download'])
@@ -252,16 +257,16 @@ class Screen(tk.Frame):
 
         elif(interface.count == 1):     # Screaming Screen
             # sounds = obtainInfoSounds(screamingDir)
-            sounds = alarmSounds
+            sounds = alarmSounds[:20]
         elif(interface.count == 2):     # Car Engine Screen
             # sounds = obtainInfoSounds(carDir)
-            sounds = insectSounds
+            sounds = insectSounds[:20]
         elif (interface.count == 3):    # Owl Screen
             # sounds = obtainInfoSounds(owlDir)
-            sounds = respiratorySounds
+            sounds = respiratorySounds[:20]
         elif (interface.count == 4):    # Knocking Screen
             # sounds = obtainInfoSounds(knockingDir)
-            sounds = screamingSounds
+            sounds = screamingSounds[:20]
         # elif (interface.count == 5):    # Rain Screen
         #     sounds = obtainInfoSounds(rainDir)
         # elif (interface.count == 6):    # Raven Bird Screen
@@ -272,7 +277,7 @@ class Screen(tk.Frame):
         # Code to display the sounds information
         for sound in sounds:
             response = retrieveSound(sound)
-            print(response)
+            # print(response)
             container = tk.Frame(inner_frame)
             container.configure(bg=bg3)
             container.pack(pady=20, padx=10, fill=tk.X)
@@ -305,6 +310,7 @@ class Screen(tk.Frame):
             icon = ImageTk.PhotoImage(svg_image)
             download_label = tk.Label(container, image=icon)
             download_label.image = icon
+            download_label.config(cursor="hand2")
             download_label.bind("<Button-1>", lambda event, sound=response: downloadSound(sound))
             download_label.grid(row=0, column=2, padx=10, pady=20)
             # download_label = tk.Label(container, text="Download")
@@ -325,7 +331,7 @@ class Screen(tk.Frame):
                 i += 1
 
             license_label = tk.Label(container, text="License")
-            license_label.configure(fg=bg4, background=bg3)
+            license_label.configure(cursor="hand2", fg=bg4, background=bg3)
             license_label.grid(row=1, column=0, padx=10, pady=20)
             license_label.bind("<Button-1>", lambda event, sound=response: seeLicense(sound))
 

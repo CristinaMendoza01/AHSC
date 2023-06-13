@@ -72,29 +72,29 @@ class Interface(tk.Tk):
                                      background=bg1, relief=tk.FLAT, borderwidth=0, fg="black")
         self.aboutButton.pack(side=tk.TOP, pady=5)
 
-        # self.button1 = tk.Button(self.button_frame, text="Screaming", command=self.show_screen1, background=bg1, relief=tk.FLAT, borderwidth=0, fg="black")
-        # self.button1.pack()
-        self.button1 = tk.Button(self.button_frame, text="Alarm", command=self.show_screen1, background=bg1,
-                                 relief=tk.FLAT, borderwidth=0, fg="black")
+        self.button1 = tk.Button(self.button_frame, text="Screaming", command=self.show_screen1, background=bg1, relief=tk.FLAT, borderwidth=0, fg="black")
         self.button1.pack()
+        # self.button1 = tk.Button(self.button_frame, text="Alarm", command=self.show_screen1, background=bg1,
+        #                          relief=tk.FLAT, borderwidth=0, fg="black")
+        # self.button1.pack()
 
-        # self.button2 = tk.Button(self.button_frame, text="Car Engine", command=self.show_screen2, background=bg1, relief=tk.FLAT, borderwidth=0, fg="black")
-        # self.button2.pack()
-        self.button2 = tk.Button(self.button_frame, text="Insect", command=self.show_screen2, background=bg1,
-                                 relief=tk.FLAT, borderwidth=0, fg="black")
+        self.button2 = tk.Button(self.button_frame, text="Car Engine", command=self.show_screen2, background=bg1, relief=tk.FLAT, borderwidth=0, fg="black")
         self.button2.pack()
+        # self.button2 = tk.Button(self.button_frame, text="Insect", command=self.show_screen2, background=bg1,
+        #                          relief=tk.FLAT, borderwidth=0, fg="black")
+        # self.button2.pack()
 
-        # self.button3 = tk.Button(self.button_frame, text="Owl", command=self.show_screen3, background=bg1, relief=tk.FLAT, borderwidth=0, fg="black")
-        # self.button3.pack()
-        self.button3 = tk.Button(self.button_frame, text="Respiratory", command=self.show_screen3, background=bg1,
-                                 relief=tk.FLAT, borderwidth=0, fg="black")
+        self.button3 = tk.Button(self.button_frame, text="Owl", command=self.show_screen3, background=bg1, relief=tk.FLAT, borderwidth=0, fg="black")
         self.button3.pack()
+        # self.button3 = tk.Button(self.button_frame, text="Respiratory", command=self.show_screen3, background=bg1,
+        #                          relief=tk.FLAT, borderwidth=0, fg="black")
+        # self.button3.pack()
 
-        # self.button4 = tk.Button(self.button_frame, text="Knocking", command=self.show_screen4, background=bg1, relief=tk.FLAT, borderwidth=0, fg="black")
-        # self.button4.pack()
-        self.button4 = tk.Button(self.button_frame, text="Screaming", command=self.show_screen4, background=bg1,
-                                 relief=tk.FLAT, borderwidth=0, fg="black")
+        self.button4 = tk.Button(self.button_frame, text="Knocking", command=self.show_screen4, background=bg1, relief=tk.FLAT, borderwidth=0, fg="black")
         self.button4.pack()
+        # self.button4 = tk.Button(self.button_frame, text="Screaming", command=self.show_screen4, background=bg1,
+        #                          relief=tk.FLAT, borderwidth=0, fg="black")
+        # self.button4.pack()
 
         self.button5 = tk.Button(self.button_frame, text="Rain", command=self.show_screen5, background=bg1, relief=tk.FLAT, borderwidth=0, fg="black")
         self.button5.pack()
@@ -210,7 +210,7 @@ def playSound(response):
                 # Open the file with wave
                 wave.open(soundDir + '/' + sound)
             else:
-                # Make a copy of the .wav sound locally
+                # Make a copy of the .interfaceSounds locally
                 improveSound(soundDir + '/' + elem, soundDir + '/' + sound)
                 # Open the file with wave
                 wave.open(soundDir + '/' + sound)
