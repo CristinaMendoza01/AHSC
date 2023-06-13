@@ -25,7 +25,7 @@ def SVM_classifier(best):
     # Let's use sklearn's preprocessing tools for applying normalisation to features
     from sklearn import preprocessing
     min_max_scaler = preprocessing.MinMaxScaler()
-    data_modif.iloc[:, :95] = min_max_scaler.fit_transform(data.iloc[:, :95].values)
+    data_modif.iloc[:, :96] = min_max_scaler.fit_transform(data.iloc[:, :96].values)
 
     # Selecciona todas las columnas excepto la última
     #cols = data_modif.columns[:-1]
@@ -58,7 +58,7 @@ def SVM_classifier(best):
 
     # categorizamos las 10 categorias en un valor numeral y las codificamos.
     # Input values put in a matrix, there are 84 features
-    X = data_modif.iloc[:, :95].values
+    X = data_modif.iloc[:, :96].values
 
     # Creating output values
     data_modif.clase = pd.Categorical(data_modif.clase)  # convert to categorical data
@@ -133,7 +133,7 @@ def classify_new_sounds(new_sounds, clf, min_max_scaler):
     # Clasifica los nuevos datos utilizando el modelo SVM
     predictions = clf.predict(normalized_sounds)
 
-    horror_sounds = pd.read_csv("horrorsounds+id.csv")
+    horror_sounds = pd.read_csv("horrorSounds.csv")
 
     # Crear una lista de resultados que contenga el id, las tres categorías con las probabilidades más altas
     results = []
@@ -165,7 +165,7 @@ def classify_new_sounds(new_sounds, clf, min_max_scaler):
 
 
 # Supongamos que tienes nuevos sonidos en la matriz 'new_sounds'
-new_data_file = 'new_horrorsounds.csv'
+new_data_file = 'horrorsounds-id.csv'
 
 # Leer el archivo CSV
 new_data = pd.read_csv(new_data_file)
