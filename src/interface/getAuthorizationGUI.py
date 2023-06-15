@@ -52,19 +52,19 @@ code_label.pack(pady=10)
 code = tk.Entry(window)
 code.pack()
 
-send_label = tk.Label(window, text="Please click the button to send the code.")
+send_label = tk.Label(window, text="Thank you! Click the button and welcome to AHSC!")
 send_label.configure(bg="#CDB3DF")
 send_label.pack(pady=10)
 
-send = tk.Button(window, text="Send Code", command=get_token)
+send = tk.Button(window, text="Click Me!", command=get_token)
 send.pack()
 
-close_label = tk.Label(window, text="Thank you! You can close now the window.")
-close_label.configure(bg="#CDB3DF")
-close_label.pack(pady=5)
-
-welcome_label = tk.Label(window, text="Welcome to AHSC!")
-welcome_label.configure(bg="#CDB3DF")
-welcome_label.pack(pady=5)
+# close_label = tk.Label(window, text="Thank you! You can close now the window.")
+# close_label.configure(bg="#CDB3DF")
+# close_label.pack(pady=5)
+#
+# welcome_label = tk.Label(window, text="Welcome to AHSC!")
+# welcome_label.configure(bg="#CDB3DF")
+# welcome_label.pack(pady=5)
 
 window.mainloop()

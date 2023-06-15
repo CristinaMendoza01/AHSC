@@ -29,16 +29,9 @@ classesAndLabels = { 0: 'Alarm',
                      }
 
 alarmSounds = [] # 0
-alarmProbs = []
-
 insectSounds = [] # 1
-insectProbs = []
-
 respiratorySounds = [] # 2
-respiratoryProbs = []
-
 screamingSounds = [] # 3
-screamingProbs = []
 
 with open('../program/results.csv', 'r') as file:
     csv_reader = csv.DictReader(file)
@@ -60,23 +53,25 @@ with open('../program/results.csv', 'r') as file:
 
         # print(num_cat_1)
         if(num_cat_1 == str(0)):
-            alarmSounds.append(sound_id)
-            alarmProbs.append(prob_1)
-
+            alarmSounds.append(row)
         if (num_cat_1 == str(1)):
             insectSounds.append(sound_id)
-            insectProbs.append(((num_cat_1, prob_1), (num_cat_2, prob_2), (num_cat_3, prob_3), (num_cat_4, prob_4), (num_cat_5, prob_5)))
-
         if (num_cat_1 == str(2)):
             respiratorySounds.append(sound_id)
-            respiratoryProbs.append(((num_cat_1, prob_1), (num_cat_2, prob_2), (num_cat_3, prob_3), (num_cat_4, prob_4), (num_cat_5, prob_5)))
-
         if (num_cat_1 == str(3)):
             screamingSounds.append(sound_id)
-            screamingProbs.append(((num_cat_1, prob_1), (num_cat_2, prob_2), (num_cat_3, prob_3), (num_cat_4, prob_4), (num_cat_5, prob_5)))
 
-# print(screamingProbs)
+lista = alarmSounds
 
-# # PROBS
-# for s in screamingProbs:
-#     print(s[])
+def orderList(list):
+    orderedList = sorted(list, key=lambda x: x['prob_1'], reverse=True)
+    return orderedList
+
+# Ordenar la lista según el parámetro 'edad'
+# numeros_ordenados = sorted(lista, key=lambda x: x['prob_1'], reverse=True)
+# lista.sort(key=lambda x: x['prob_1'])
+# lista.sort(reverse=True)
+
+# Imprimir la lista ordenada
+# for elemento in numeros_ordenados:
+#     print(elemento)

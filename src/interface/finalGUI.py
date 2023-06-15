@@ -199,9 +199,11 @@ def delete_all_widgets(frame):
         widget.destroy()
 ###################################################################################################
 def getSounds(inner_frame, current_page_data):
+
     # Show the data
+    current_page_data = orderList(current_page_data)
     for sound in current_page_data:
-        response = retrieveSound(sound)
+        response = retrieveSound(sound['sound_id'])
         container = tk.Frame(inner_frame)
         container.configure(bg=bg3)
         container.pack(pady=20, padx=10, fill=tk.X)
@@ -219,7 +221,7 @@ def getSounds(inner_frame, current_page_data):
         name_label.configure(fg=bg4, background=bg3)
         name_label.grid(row=0, column=1, padx=10, pady=20)
 
-        username_label = tk.Label(container, text=response['username'])
+        username_label = tk.Label(container, text="User: " + response['username'])
         username_label.configure(fg=bg4, background=bg3)
         username_label.grid(row=1, column=1, padx=10, pady=20)
 
@@ -243,8 +245,41 @@ def getSounds(inner_frame, current_page_data):
         info_label.config( cursor="hand2", fg=bg4, background=bg3)
         info_label.bind("<Button-1>", lambda event, sound=response: moreInfo(sound))
 
+        tags = []
         i = 2
-        for tag in response['tags']:
+        # obtainCat(current_page_data, tags)
+        numcat1 = int(sound['category_1'])
+        cat1 = classesAndLabels[numcat1]
+        prob1 = float(sound['prob_1'])
+        prob1 = round((prob1 * 100), 2)
+
+        numcat2 = int(sound['category_2'])
+        cat2 = classesAndLabels[numcat2]
+        prob2 = float(sound['prob_2'])
+        prob2 = round((prob2 * 100), 2)
+
+        numcat3 = int(sound['category_3'])
+        cat3 = classesAndLabels[numcat3]
+        prob3 = float(sound['prob_3'])
+        prob3 = round((prob3 * 100), 2)
+
+        numcat4 = int(sound['category_4'])
+        cat4 = classesAndLabels[numcat4]
+        prob4 = float(sound['prob_4'])
+        prob4 = round((prob4 * 100), 2)
+
+        numcat5 = int(sound['category_5'])
+        cat5 = classesAndLabels[numcat2]
+        prob5 = float(sound['prob_5'])
+        prob5 = round((prob5 * 100), 2)
+
+        tags.append(str(cat1) + ' - ' + str(prob1) + '%')
+        tags.append(str(cat2) + ' - ' + str(prob2) + '%')
+        tags.append(str(cat3) + ' - ' + str(prob3) + '%')
+        tags.append(str(cat4) + ' - ' + str(prob4) + '%')
+        tags.append(str(cat5) + ' - ' + str(prob5) + '%')
+
+        for tag in tags:
             tags_label = tk.Label(container, text=tag)
             tags_label.configure(fg=bg4, background=bg3)
             tags_label.grid(row=1, column=i, pady=20, padx=10)
@@ -269,6 +304,14 @@ class Screen(tk.Frame):
         self.current_page_data = self.get_current_page_data()
         delete_all_widgets(self.inner_frame)
         getSounds(self.inner_frame, self.current_page_data)
+        button_frame = tk.Frame(self.inner_frame, bg=bg2)
+        button_frame.pack(side=tk.BOTTOM, fill=tk.BOTH)
+
+        previous_button = tk.Button(button_frame, text="Previous Page", command=self.show_previous_page)
+        previous_button.grid(row=0, column=1, padx=10, pady=10, sticky="nw")
+
+        next_button = tk.Button(button_frame, text="Next Page", command=self.show_next_page)
+        next_button.grid(row=0, column=2, pady=10)
     def show_next_page(self):
         self.current_page += 1
         if self.current_page > self.total_pages:
@@ -276,6 +319,14 @@ class Screen(tk.Frame):
         self.current_page_data = self.get_current_page_data()
         delete_all_widgets(self.inner_frame)
         getSounds(self.inner_frame, self.current_page_data)
+        button_frame = tk.Frame(self.inner_frame, bg=bg2)
+        button_frame.pack(side=tk.BOTTOM, fill=tk.BOTH)
+
+        previous_button = tk.Button(button_frame, text="Previous Page", command=self.show_previous_page)
+        previous_button.grid(row=0, column=1, padx=10, pady=10, sticky="nw")
+
+        next_button = tk.Button(button_frame, text="Next Page", command=self.show_next_page)
+        next_button.grid(row=0, column=2, pady=10)
 
     def __init__(self, master):
         super().__init__(master)
@@ -295,9 +346,6 @@ class Screen(tk.Frame):
         self.inner_frame.pack()
         canvas.create_window((0, 0), window=self.inner_frame, anchor=tk.NW)
 
-        button_frame = tk.Frame(canvas, bg=bg2)
-        button_frame.pack(side=tk.TOP)
-
         # Create a frame inside the canvas to hold the about content
         about_frame = tk.Frame(canvas, bg=bg2)
         about_frame.pack()
@@ -309,6 +357,7 @@ class Screen(tk.Frame):
         canvas.configure(xscrollcommand=scrollbar.set)
 
         self.sounds = []
+
         if(interface.count == 0):       # About Screen
             label = tk.Label(about_frame, text="This project is called AHSC: Automatic Horror Sound Classification and it's about to create a software that classifies different horror sounds. \nBasically, we get horror sounds from Freesound (https://freesound.org/) and we create a software application. \nThis application classifies these sounds into different categories. \n\nAHSC is an innovative project developed as part of the Music Technology Workshop elective course for ICT engineering degrees at UPF. \nThe aim of this project is to develop a software application based on the 'Freesound' website to classify horror sounds by using a new \ntagging system created by us to classify these horror sounds automatically in subcategories. \n\nWith almost 12000 available horror-related sounds on the website without specific tags, \nthis project proposes a solution that involves using metadata and implementing classification algorithms to generate subcategories, \nwhich will allow for more accurate and specific searches. \n\nTo achieve this, the project employs the Python programming language and the Pycharm IDE, along with the powerful 'Essentia' \nlibraries that help with sound analysis and descriptor extraction, and the 'Scikit-learn' library for machine learning techniques.")
             label.configure(font=("Arial", 10), background=bg2, fg="black")
@@ -334,11 +383,15 @@ class Screen(tk.Frame):
 
         getSounds(self.inner_frame, self.current_page_data)
 
+        # Create the buttons to change between pages
+        button_frame = tk.Frame(self.inner_frame, bg=bg2)
+        button_frame.pack(side=tk.BOTTOM, fill=tk.BOTH)
+
         previous_button = tk.Button(button_frame, text="Previous Page", command=self.show_previous_page)
-        previous_button.grid(row=0, column=1)
+        previous_button.grid(row=0, column=1, padx=10, pady=10, sticky="nw")
 
         next_button = tk.Button(button_frame, text="Next Page", command=self.show_next_page)
-        next_button.grid(row=0, column=2)
+        next_button.grid(row=0, column=2, pady=10)
 
         # Configure the canvas to scroll the inner frame
         self.inner_frame.bind("<Configure>", lambda event: canvas.configure(scrollregion=canvas.bbox("all")))
