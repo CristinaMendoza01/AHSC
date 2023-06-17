@@ -2,7 +2,6 @@ import pandas as pd
 import numpy as np
 from sklearn.metrics import accuracy_score, precision_score, recall_score, f1_score, confusion_matrix
 
-
 def evaluar_svm(csv_file):
     df = pd.read_csv(csv_file, header=None)
 
@@ -25,6 +24,9 @@ def evaluar_svm(csv_file):
     fp = np.sum(cm, axis=0) - tp
     fn = np.sum(cm, axis=1) - tp
     tn = np.sum(cm) - (tp + fp + fn)
+    fpr = fp / (fp + tn)
+    fnr = fn / (fn + tp)
+    acc = (tp + tn) / (tp + tn + fp + fn)
 
     print("\nQuantitative evaluation:\n")
     print("Accuracy:", accuracy)
@@ -35,6 +37,10 @@ def evaluar_svm(csv_file):
     print("False Positives (FP):\n", fp, "\n")
     print("True Negatives (TN):\n", tn, "\n")
     print("False Negatives (FN):", fn)
+
+    print("\nFalse Positive Rate: ", fpr)
+    print("\nFalse Negative Rate: ", fnr)
+    print("\nAccuracy per class: ", acc)
 
 ##############################################
 evaluar_svm("resultados.csv")
