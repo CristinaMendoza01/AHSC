@@ -30,21 +30,37 @@ class Interface(tk.Tk):
         self.top_frame.pack(side=tk.TOP, fill=tk.X)
 
         self.down_frame = tk.Frame(self)
-        # self.down_frame.configure(bg="#9D7CC5")
         self.down_frame.configure(bg=bg1)
         self.down_frame.pack(side=tk.BOTTOM, fill=tk.X)
 
         self.title_label = tk.Label(self.top_frame, text="AHSC: Automatic Horror Sound Classification", font=("Arial", 15), fg="black", bg=bg1)
-        # self.title_label.pack(pady=20)
         self.title_label.configure(justify="center")
         self.title_label.grid(row=0, column=1, padx=150)
+
+        self.info_label = tk.Label(self.top_frame, text="Click the sound image to listen to the sound!",
+                                    font=("Arial", 8), fg="black", bg=bg1)
+        self.info_label.configure(justify="center")
+        self.info_label.grid(row=1, column=1, pady=5)
 
         self.main_frame = tk.Frame(self)
         self.main_frame.pack(expand=True, fill=tk.BOTH)
 
-        self.button_frame = tk.Frame(self.main_frame, width=100)
+        self.b_frame = tk.Frame(self.main_frame, width=100)
+        self.b_frame.configure(bg=bg1)
+        self.b_frame.pack(side=tk.LEFT, fill=tk.Y)
+
+        scrollbar = tk.Scrollbar(self.b_frame)
+        scrollbar.pack(side=tk.LEFT, fill=tk.Y)
+
+        canvas = tk.Canvas(self.b_frame, yscrollcommand=scrollbar.set, width=150)
+        canvas.configure(bg=bg1)
+        canvas.pack(side=tk.LEFT, fill=tk.BOTH, expand=True)
+
+        scrollbar.config(command=canvas.yview)
+
+        self.button_frame = tk.Frame(canvas)
         self.button_frame.configure(bg=bg1)
-        self.button_frame.pack(side=tk.LEFT, fill=tk.Y)
+        canvas.create_window((0, 0), window=self.button_frame, anchor=tk.NW)
 
         self.screen_frame = tk.Frame(self.main_frame)
         self.screen_frame.configure(bg=bg2)
@@ -67,14 +83,12 @@ class Interface(tk.Tk):
         # Create a label to display the image
         self.image_label = tk.Label(self.top_frame, image=self.photo)
         self.image_label.grid(row=0, column=0, sticky="nw", padx=30, pady=10)
-        # self.image_label.pack()
-        #########################################################################################
 
-        ################################### BUTTONS ###############################################
+        ##################################### ABOUT BUTTON #############################################
         self.aboutButton = tk.Button(self.down_frame, text="About", font=("Arial", 10), command=self.show_about,
                                      background=bg1, relief=tk.FLAT, borderwidth=0, fg="black")
         self.aboutButton.pack(side=tk.TOP, pady=5)
-
+        ################################### CATEGORY BUTTONS ###############################################
         self.button1 = tk.Button(self.button_frame, text="Alarm", command=self.show_screen1, background=bg1,
                                  relief=tk.FLAT, borderwidth=0, fg="black")
         self.button1.pack()
@@ -90,9 +104,100 @@ class Interface(tk.Tk):
         self.button4 = tk.Button(self.button_frame, text="Screaming", command=self.show_screen4, background=bg1,
                                  relief=tk.FLAT, borderwidth=0, fg="black")
         self.button4.pack()
+
+        self.button5 = tk.Button(self.button_frame, text="Bell", command=self.show_screen5, background=bg1,
+                                 relief=tk.FLAT, borderwidth=0, fg="black")
+        self.button5.pack()
+
+        self.button6 = tk.Button(self.button_frame, text="Bird", command=self.show_screen6, background=bg1,
+                                 relief=tk.FLAT, borderwidth=0, fg="black")
+        self.button6.pack()
+
+        self.button7 = tk.Button(self.button_frame, text="Bowed String Instruments", command=self.show_screen7, background=bg1,
+                                 relief=tk.FLAT, borderwidth=0, fg="black")
+        self.button7.pack()
+
+        self.button8 = tk.Button(self.button_frame, text="Creature", command=self.show_screen8, background=bg1,
+                                 relief=tk.FLAT, borderwidth=0, fg="black")
+        self.button8.pack()
+
+        self.button9 = tk.Button(self.button_frame, text="Door / Window", command=self.show_screen9, background=bg1,
+                                 relief=tk.FLAT, borderwidth=0, fg="black")
+        self.button9.pack()
+
+        self.button10 = tk.Button(self.button_frame, text="Explosion", command=self.show_screen10, background=bg1,
+                                 relief=tk.FLAT, borderwidth=0, fg="black")
+        self.button10.pack()
+
+        self.button11 = tk.Button(self.button_frame, text="Fire", command=self.show_screen11, background=bg1,
+                                 relief=tk.FLAT, borderwidth=0, fg="black")
+        self.button11.pack()
+
+        self.button12 = tk.Button(self.button_frame, text="Guitar", command=self.show_screen12, background=bg1,
+                                 relief=tk.FLAT, borderwidth=0, fg="black")
+        self.button12.pack()
+
+        self.button13 = tk.Button(self.button_frame, text="Gunshot", command=self.show_screen13, background=bg1,
+                                 relief=tk.FLAT, borderwidth=0, fg="black")
+        self.button13.pack()
+
+        self.button14 = tk.Button(self.button_frame, text="Footsteps", command=self.show_screen14, background=bg1,
+                                 relief=tk.FLAT, borderwidth=0, fg="black")
+        self.button14.pack()
+
+        self.button15 = tk.Button(self.button_frame, text="House", command=self.show_screen15, background=bg1,
+                                 relief=tk.FLAT, borderwidth=0, fg="black")
+        self.button15.pack()
+
+        self.button16 = tk.Button(self.button_frame, text="Howl", command=self.show_screen16, background=bg1,
+                                 relief=tk.FLAT, borderwidth=0, fg="black")
+        self.button16.pack()
+
+        self.button17 = tk.Button(self.button_frame, text="Interferences", command=self.show_screen17, background=bg1,
+                                 relief=tk.FLAT, borderwidth=0, fg="black")
+        self.button17.pack()
+
+        self.button18 = tk.Button(self.button_frame, text="Keyboard Instruments", command=self.show_screen18, background=bg1,
+                                 relief=tk.FLAT, borderwidth=0, fg="black")
+        self.button18.pack()
+
+        self.button19 = tk.Button(self.button_frame, text="Laughter", command=self.show_screen19, background=bg1,
+                                 relief=tk.FLAT, borderwidth=0, fg="black")
+        self.button19.pack()
+
+        self.button20 = tk.Button(self.button_frame, text="Motor", command=self.show_screen20, background=bg1,
+                                 relief=tk.FLAT, borderwidth=0, fg="black")
+        self.button20.pack()
+
+        self.button21 = tk.Button(self.button_frame, text="NIghtmare", command=self.show_screen21, background=bg1,
+                                 relief=tk.FLAT, borderwidth=0, fg="black")
+        self.button21.pack()
+
+        self.button22 = tk.Button(self.button_frame, text="Rain", command=self.show_screen22, background=bg1,
+                                 relief=tk.FLAT, borderwidth=0, fg="black")
+        self.button22.pack()
+
+        self.button23 = tk.Button(self.button_frame, text="Telephone", command=self.show_screen23, background=bg1,
+                                 relief=tk.FLAT, borderwidth=0, fg="black")
+        self.button23.pack()
+
+        self.button24 = tk.Button(self.button_frame, text="Tools", command=self.show_screen24, background=bg1,
+                                 relief=tk.FLAT, borderwidth=0, fg="black")
+        self.button24.pack()
+
+        self.button25 = tk.Button(self.button_frame, text="Whispers", command=self.show_screen25, background=bg1,
+                                 relief=tk.FLAT, borderwidth=0, fg="black")
+        self.button25.pack()
+
+        self.button26 = tk.Button(self.button_frame, text="Wind", command=self.show_screen26, background=bg1,
+                                 relief=tk.FLAT, borderwidth=0, fg="black")
+        self.button26.pack()
         #########################################################################################
 
         self.current_screen = None
+
+        # Configure the canvas to scroll the inner frame
+        canvas.bind("<Configure>", lambda event: canvas.configure(scrollregion=canvas.bbox("all")))
 
     #################### FUNCTIONS TO SHOW THE SCREENS ##########################################
     count = 0
@@ -108,49 +213,157 @@ class Interface(tk.Tk):
         self.clear_screen()
         self.current_screen = Screen(self.screen_frame)
         self.current_screen.pack(expand=True, fill=tk.BOTH)
-        # self.current_screen.bind_scrollbar(self.scrollbar)
 
     def show_screen2(self):
         interface.count = 2
         self.clear_screen()
         self.current_screen = Screen(self.screen_frame)
         self.current_screen.pack(expand=True, fill=tk.BOTH)
-        # self.current_screen.bind_scrollbar(self.scrollbar)
 
     def show_screen3(self):
         interface.count = 3
         self.clear_screen()
         self.current_screen = Screen(self.screen_frame)
         self.current_screen.pack(expand=True, fill=tk.BOTH)
-        # self.current_screen.bind_scrollbar(self.scrollbar)
 
     def show_screen4(self):
         interface.count = 4
         self.clear_screen()
         self.current_screen = Screen(self.screen_frame)
         self.current_screen.pack(expand=True, fill=tk.BOTH)
-        # self.current_screen.bind_scrollbar(self.scrollbar)
 
-    # def show_screen5(self):
-    #     interface.count = 5
-    #     self.clear_screen()
-    #     self.current_screen = Screen(self.screen_frame)
-    #     self.current_screen.pack(expand=True, fill=tk.BOTH)
-    #     # self.current_screen.bind_scrollbar(self.scrollbar)
-    #
-    # def show_screen6(self):
-    #     interface.count = 6
-    #     self.clear_screen()
-    #     self.current_screen = Screen(self.screen_frame)
-    #     self.current_screen.pack(expand=True, fill=tk.BOTH)
-    #     # self.current_screen.bind_scrollbar(self.scrollbar)
-    #
-    # def show_screen7(self):
-    #     interface.count = 7
-    #     self.clear_screen()
-    #     self.current_screen = Screen(self.screen_frame)
-    #     self.current_screen.pack(expand=True, fill=tk.BOTH)
-    #     # self.current_screen.bind_scrollbar(self.scrollbar)
+    def show_screen5(self):
+        interface.count = 5
+        self.clear_screen()
+        self.current_screen = Screen(self.screen_frame)
+        self.current_screen.pack(expand=True, fill=tk.BOTH)
+
+    def show_screen6(self):
+        interface.count = 6
+        self.clear_screen()
+        self.current_screen = Screen(self.screen_frame)
+        self.current_screen.pack(expand=True, fill=tk.BOTH)
+
+    def show_screen7(self):
+        interface.count = 7
+        self.clear_screen()
+        self.current_screen = Screen(self.screen_frame)
+        self.current_screen.pack(expand=True, fill=tk.BOTH)
+
+    def show_screen8(self):
+        interface.count = 8
+        self.clear_screen()
+        self.current_screen = Screen(self.screen_frame)
+        self.current_screen.pack(expand=True, fill=tk.BOTH)
+
+    def show_screen9(self):
+        interface.count = 9
+        self.clear_screen()
+        self.current_screen = Screen(self.screen_frame)
+        self.current_screen.pack(expand=True, fill=tk.BOTH)
+
+    def show_screen10(self):
+        interface.count = 10
+        self.clear_screen()
+        self.current_screen = Screen(self.screen_frame)
+        self.current_screen.pack(expand=True, fill=tk.BOTH)
+
+    def show_screen11(self):
+        interface.count = 11
+        self.clear_screen()
+        self.current_screen = Screen(self.screen_frame)
+        self.current_screen.pack(expand=True, fill=tk.BOTH)
+
+    def show_screen12(self):
+        interface.count = 12
+        self.clear_screen()
+        self.current_screen = Screen(self.screen_frame)
+        self.current_screen.pack(expand=True, fill=tk.BOTH)
+
+    def show_screen13(self):
+        interface.count = 13
+        self.clear_screen()
+        self.current_screen = Screen(self.screen_frame)
+        self.current_screen.pack(expand=True, fill=tk.BOTH)
+
+    def show_screen14(self):
+        interface.count = 14
+        self.clear_screen()
+        self.current_screen = Screen(self.screen_frame)
+        self.current_screen.pack(expand=True, fill=tk.BOTH)
+
+    def show_screen15(self):
+        interface.count = 15
+        self.clear_screen()
+        self.current_screen = Screen(self.screen_frame)
+        self.current_screen.pack(expand=True, fill=tk.BOTH)
+
+    def show_screen16(self):
+        interface.count = 16
+        self.clear_screen()
+        self.current_screen = Screen(self.screen_frame)
+        self.current_screen.pack(expand=True, fill=tk.BOTH)
+
+    def show_screen17(self):
+        interface.count = 17
+        self.clear_screen()
+        self.current_screen = Screen(self.screen_frame)
+        self.current_screen.pack(expand=True, fill=tk.BOTH)
+
+    def show_screen18(self):
+        interface.count = 18
+        self.clear_screen()
+        self.current_screen = Screen(self.screen_frame)
+        self.current_screen.pack(expand=True, fill=tk.BOTH)
+
+    def show_screen19(self):
+        interface.count = 19
+        self.clear_screen()
+        self.current_screen = Screen(self.screen_frame)
+        self.current_screen.pack(expand=True, fill=tk.BOTH)
+
+    def show_screen20(self):
+        interface.count = 20
+        self.clear_screen()
+        self.current_screen = Screen(self.screen_frame)
+        self.current_screen.pack(expand=True, fill=tk.BOTH)
+
+    def show_screen21(self):
+        interface.count = 21
+        self.clear_screen()
+        self.current_screen = Screen(self.screen_frame)
+        self.current_screen.pack(expand=True, fill=tk.BOTH)
+
+    def show_screen22(self):
+        interface.count = 22
+        self.clear_screen()
+        self.current_screen = Screen(self.screen_frame)
+        self.current_screen.pack(expand=True, fill=tk.BOTH)
+
+    def show_screen23(self):
+        interface.count = 23
+        self.clear_screen()
+        self.current_screen = Screen(self.screen_frame)
+        self.current_screen.pack(expand=True, fill=tk.BOTH)
+
+    def show_screen24(self):
+        interface.count = 24
+        self.clear_screen()
+        self.current_screen = Screen(self.screen_frame)
+        self.current_screen.pack(expand=True, fill=tk.BOTH)
+
+    def show_screen25(self):
+        interface.count = 25
+        self.clear_screen()
+        self.current_screen = Screen(self.screen_frame)
+        self.current_screen.pack(expand=True, fill=tk.BOTH)
+
+    def show_screen26(self):
+        interface.count = 26
+        self.clear_screen()
+        self.current_screen = Screen(self.screen_frame)
+        self.current_screen.pack(expand=True, fill=tk.BOTH)
+
     def clear_screen(self):
         if self.current_screen:
             self.current_screen.pack_forget()
@@ -201,7 +414,6 @@ def delete_all_widgets(frame):
 def getSounds(inner_frame, current_page_data):
 
     # Show the data
-    current_page_data = orderList(current_page_data)
     for sound in current_page_data:
         response = retrieveSound(sound['sound_id'])
         container = tk.Frame(inner_frame)
@@ -225,11 +437,6 @@ def getSounds(inner_frame, current_page_data):
         username_label.configure(fg=bg4, background=bg3)
         username_label.grid(row=1, column=1, padx=10, pady=20)
 
-        # play_label = tk.Label(container, text="Play")
-        # play_label.grid(row=0, column=3, padx=10, pady=20)
-        # play_label.config(cursor="hand2", fg="black", background=bg3)
-        # play_label.bind("<Button-1>", lambda event, sound=response: playSound(sound))
-
         icon_path = "download.png"
         svg_image = Image.open(icon_path)
         svg_image = svg_image.resize((20, 20))
@@ -247,7 +454,6 @@ def getSounds(inner_frame, current_page_data):
 
         tags = []
         i = 2
-        # obtainCat(current_page_data, tags)
         numcat1 = int(sound['category_1'])
         cat1 = classesAndLabels[numcat1]
         prob1 = float(sound['prob_1'])
@@ -269,7 +475,7 @@ def getSounds(inner_frame, current_page_data):
         prob4 = round((prob4 * 100), 2)
 
         numcat5 = int(sound['category_5'])
-        cat5 = classesAndLabels[numcat2]
+        cat5 = classesAndLabels[numcat5]
         prob5 = float(sound['prob_5'])
         prob5 = round((prob5 * 100), 2)
 
@@ -370,11 +576,57 @@ class Screen(tk.Frame):
         elif(interface.count == 1):     # Alarm Screen
             self.sounds = alarmSounds
         elif(interface.count == 2):     # Insect Screen
-            self.sounds = insectSounds[:20]
+            self.sounds = insectSounds
         elif (interface.count == 3):    # Respiratory Screen
-            self.sounds = respiratorySounds[:20]
+            self.sounds = respiratorySounds
         elif (interface.count == 4):    # Screaming Screen
-            self.sounds = screamingSounds[:20]
+            self.sounds = screamingSounds
+        elif (interface.count == 5):
+            self.sounds = bellSounds
+        elif (interface.count == 6):
+            self.sounds = birdSounds
+        elif (interface.count == 7):
+            self.sounds = bowedSounds
+        elif (interface.count == 8):
+            self.sounds = creatureSounds
+        elif (interface.count == 9):
+            self.sounds = doorSounds
+        elif (interface.count == 10):
+            self.sounds = explosionSounds
+        elif (interface.count == 11):
+            self.sounds = fireSounds
+        elif (interface.count == 12):
+            self.sounds = guitarSounds
+        elif (interface.count == 13):
+            self.sounds = gunshotSounds
+        elif (interface.count == 14):
+            self.sounds = footSounds
+        elif (interface.count == 15):
+            self.sounds = houseSounds
+        elif (interface.count == 16):
+            self.sounds = howlSounds
+        elif (interface.count == 17):
+            self.sounds = interferencesSounds
+        elif (interface.count == 18):
+            self.sounds = keyboardSounds
+        elif (interface.count == 19):
+            self.sounds = laughSounds
+        elif (interface.count == 20):
+            self.sounds = motorSounds
+        elif (interface.count == 21):
+            self.sounds = nightmareSounds
+        elif (interface.count == 22):
+            self.sounds = rainSounds
+        elif (interface.count == 23):
+            self.sounds = telephoneSounds
+        elif (interface.count == 24):
+            self.sounds = toolSounds
+        elif (interface.count == 25):
+            self.sounds = whisperSounds
+        elif (interface.count == 26):
+            self.sounds = windSounds
+
+        self.sounds = orderList(self.sounds) # Order the sounds from high to low prob_1
 
         self.limit = 5
         self.total_pages = (len(self.sounds) + self.limit - 1) // self.limit

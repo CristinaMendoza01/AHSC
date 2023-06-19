@@ -47,7 +47,7 @@ def callAPI(authorization_code):
     }
 
     response = requests.post(token_url, data=data)
-    print(response.json())
+    # print(response.json())
     access_token = response.json()["access_token"]
     # Use the access token for authenticated API requests
     headers = {

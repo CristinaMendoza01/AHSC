@@ -45,7 +45,7 @@ label2.pack(pady=10)
 button3 = tk.Button(window, text="Open URL", command=openURL)
 button3.pack()
 
-code_label = tk.Label(window, text="Authorization code:")
+code_label = tk.Label(window, text="Copy and paste the authorization code:")
 code_label.configure(bg="#CDB3DF")
 code_label.pack(pady=10)
 

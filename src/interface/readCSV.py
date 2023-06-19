@@ -32,46 +32,90 @@ alarmSounds = [] # 0
 insectSounds = [] # 1
 respiratorySounds = [] # 2
 screamingSounds = [] # 3
+bellSounds = [] # 4
+birdSounds = [] # 5
+bowedSounds = [] # 6
+creatureSounds = [] # 7
+doorSounds = [] # 8
+explosionSounds = [] # 9
+fireSounds = [] # 10
+guitarSounds = [] # 11
+gunshotSounds = [] # 12
+footSounds = [] # 13
+houseSounds = [] # 14
+howlSounds = [] # 15
+interferencesSounds = [] # 16
+keyboardSounds = [] # 17
+laughSounds = [] # 18
+motorSounds = [] # 19
+nightmareSounds = [] # 20
+rainSounds = [] # 21
+telephoneSounds = [] # 22
+toolSounds = [] # 23
+whisperSounds = [] # 24
+windSounds = [] # 25
 
 with open('../program/results.csv', 'r') as file:
     csv_reader = csv.DictReader(file)
 
     # sound_id, category_1, prob_1, category_2, prob_2, category_3, prob_3, category_4, prob_4, category_5, prob_5
     for row in csv_reader:
-        sound_id = row['sound_id']
         num_cat_1 = row['category_1']
-        prob_1 = row['prob_1']
-        num_cat_2 = row['category_2']
-        prob_2 = row['prob_2']
-        num_cat_3 = row['category_3']
-        prob_3 = row['prob_3']
-        num_cat_4 = row['category_4']
-        prob_4 = row['prob_4']
-        num_cat_5 = row['category_5']
-        prob_5 = row['prob_5']
-
 
         # print(num_cat_1)
         if(num_cat_1 == str(0)):
             alarmSounds.append(row)
         if (num_cat_1 == str(1)):
-            insectSounds.append(sound_id)
+            insectSounds.append(row)
         if (num_cat_1 == str(2)):
-            respiratorySounds.append(sound_id)
+            respiratorySounds.append(row)
         if (num_cat_1 == str(3)):
-            screamingSounds.append(sound_id)
-
-lista = alarmSounds
+            screamingSounds.append(row)
+        if(num_cat_1 == str(4)):
+            bellSounds.append(row)
+        if(num_cat_1 == str(5)):
+            birdSounds.append(row)
+        if (num_cat_1 == str(6)):
+            bowedSounds.append(row)
+        if (num_cat_1 == str(7)):
+            creatureSounds.append(row)
+        if (num_cat_1 == str(8)):
+            doorSounds.append(row)
+        if (num_cat_1 == str(9)):
+            explosionSounds.append(row)
+        if (num_cat_1 == str(10)):
+            fireSounds.append(row)
+        if (num_cat_1 == str(11)):
+            guitarSounds.append(row)
+        if (num_cat_1 == str(12)):
+            gunshotSounds.append(row)
+        if (num_cat_1 == str(13)):
+            footSounds.append(row)
+        if (num_cat_1 == str(14)):
+            houseSounds.append(row)
+        if (num_cat_1 == str(15)):
+            howlSounds.append(row)
+        if (num_cat_1 == str(16)):
+            interferencesSounds.append(row)
+        if (num_cat_1 == str(17)):
+            keyboardSounds.append(row)
+        if (num_cat_1 == str(18)):
+            laughSounds.append(row)
+        if (num_cat_1 == str(19)):
+            motorSounds.append(row)
+        if (num_cat_1 == str(20)):
+            nightmareSounds.append(row)
+        if (num_cat_1 == str(21)):
+            rainSounds.append(row)
+        if (num_cat_1 == str(22)):
+            telephoneSounds.append(row)
+        if (num_cat_1 == str(23)):
+            toolSounds.append(row)
+        if (num_cat_1 == str(24)):
+            whisperSounds.append(row)
+        if (num_cat_1 == str(25)):
+            windSounds.append(row)
 
 def orderList(list):
     orderedList = sorted(list, key=lambda x: x['prob_1'], reverse=True)
     return orderedList
-
-# Ordenar la lista según el parámetro 'edad'
-# numeros_ordenados = sorted(lista, key=lambda x: x['prob_1'], reverse=True)
-# lista.sort(key=lambda x: x['prob_1'])
-# lista.sort(reverse=True)
-
-# Imprimir la lista ordenada
-# for elemento in numeros_ordenados:
-#     print(elemento)
