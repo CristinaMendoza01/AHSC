@@ -12,8 +12,8 @@ def evaluar_svm(csv_file):
     y_pred = y_pred.astype(int)
 
     accuracy = accuracy_score(y_true, y_pred)
-    precision = precision_score(y_true, y_pred, average='weighted')
-    recall = recall_score(y_true, y_pred, average='weighted')
+    # precision = precision_score(y_true, y_pred, average='weighted')
+    # recall = recall_score(y_true, y_pred, average='weighted')
     f1 = f1_score(y_true, y_pred, average='weighted')
 
     # Calcular la matriz de confusión
@@ -26,7 +26,11 @@ def evaluar_svm(csv_file):
     tn = np.sum(cm) - (tp + fp + fn)
     fpr = fp / (fp + tn)
     fnr = fn / (fn + tp)
-    acc = (tp + tn) / (tp + tn + fp + fn)
+    # acc = (tp + tn) / (tp + tn + fp + fn)
+
+    precision = tp / (tp + fp)
+    recall = tp / (tp + fn)
+    acc = (2*precision*recall) / (precision + recall)
 
     print("\nQuantitative evaluation:\n")
     print("Accuracy:", accuracy)
