@@ -9,7 +9,7 @@ import csv
 from sklearn import preprocessing
 
 def SVM_classifier(best):
-    data_file = 'fulldata.csv'
+    data_file = 'clases_filtrados.csv'
 
     # Leer el archivo CSV
     data = pd.read_csv(data_file)
